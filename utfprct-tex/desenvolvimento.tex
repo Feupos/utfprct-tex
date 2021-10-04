@@ -34,8 +34,6 @@ PON C++ 4.0 pretende resolvê-los.
 \begin{table}[!htb]
 \centering
 \caption{Problemas a serem endereçados pelo \textit{Framework} PON C++ 4.0}
-\caption*{Fonte: Autoria própria}
-\label{tab:obj_fw4}
 \smallskip
 \begin{tabularx}{\textwidth}{|l|X|}\hline
     Objetivo & Proposta   \\\hline\hline
@@ -44,6 +42,8 @@ PON C++ 4.0 pretende resolvê-los.
     Reduzir a verbosidade da utilização & \textit{Builders} com \textit{variadic templates} \\ \hline
     Permitir execução com paralelismo & Notificações com políticas de execução \\ \hline
 \end{tabularx}
+\fonte{Autoria própria}
+\label{tab:obj_fw4}
 \end{table}
 
 Em tempo, naturalmente trechos de código do proposto \textit{Framework} PON C++
@@ -142,10 +142,10 @@ visando aumentar a facilidade de uso do código decorrente.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.7\textwidth]{../figures/fw2_core.PNG}
-    \smallskip
     \caption{Diagrama de classes do pacote \textit{Core} do \textit{Framework}
-        PON C++ 2.0} \caption*{Fonte: \citeonline{msc_Ronszcka_2012}}
+        PON C++ 2.0} \includegraphics[width=0.7\textwidth]{../figures/fw2_core.PNG}
+    \smallskip
+    \fonte{\citeonline{msc_Ronszcka_2012}}
     \label{fig:class_fw2_core}
 \end{figure}
 
@@ -170,10 +170,10 @@ próprias \textit{Conditions}.
 
 \begin{figure}[!htb]
     \centering
+    \caption{Diagrama de classes do \textit{Framework} PON C++ 4.0}
     \includegraphics[width=\textwidth]{../figures/astah_nop4.png}
     \smallskip
-    \caption{Diagrama de classes do \textit{Framework} PON C++ 4.0}
-    \caption*{Fonte: Autoria própria}
+    \fonte{Autoria própria}
     \label{fig:class_fw4}
 \end{figure}
 
@@ -215,8 +215,6 @@ desenvolvimento.
 \begin{table}[!htb]
     \centering
     \caption{Padrões de projeto aplicados no \textit{Framework} PON C++ 4.0}
-    \caption*{Fonte: Autoria própria}
-    \label{tab:padroes}
     \smallskip
     \begin{tabularx}{\textwidth}{|l|X|}\hline
         Padrão de projeto & Aplicação   \\\hline\hline
@@ -226,6 +224,8 @@ desenvolvimento.
         \textit{Singleton} & Aplicado para a implementação do escalonador de
         \textit{Rules} \\ \hline%, conforme apresentado na Seção \ref{sec:scheduler}\\ \hline
     \end{tabularx}
+    \fonte{Autoria própria}
+    \label{tab:padroes}
     \end{table}
 
 \section{Mecanismo de notificações}\label{sec:observer}
@@ -1253,11 +1253,11 @@ utilizadas para o desenvolvimento desse mecanismo.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=\textwidth]{../figures/logger_class.png}
-    \smallskip
     \caption{Diagrama de classes de \textit{logs} do \textit{Framework} PON C++
     4.0}
-    \caption*{Fonte: Autoria própria}
+    \includegraphics[width=\textwidth]{../figures/logger_class.png}
+    \smallskip
+    \fonte{Autoria própria}
     \label{fig:class_fw4_log}
 \end{figure}
 
@@ -1386,7 +1386,7 @@ Esta e outras opções de compilação são detalhadas na seção seguinte.
 [2021-03-27 18:40:21.494] [NOP] [info] TestFBE - in1: Instigated
 \end{lstlisting}
     \caption{Exemplo de \textit{logs} do \textit{Framework} PON C++ 4.0}
-    \caption*{Fonte: Autoria própria}
+    \fonte{Autoria própria}
     \label{fig:log_fw4}
 \end{table}
 
@@ -1570,10 +1570,10 @@ testes foram aprovados e que a execução levou menos de 1 segundo.
 
 \begin{figure}[!htb]
 \centering
+\caption{Relatório dos testes do \textit{Framework} PON C++ 4.0}
 \includegraphics[width=\textwidth]{../figures/gtest_020421.png}
 \smallskip
-\caption{Relatório dos testes do \textit{Framework} PON C++ 4.0}
-\caption*{Fonte: Autoria própria}
+\fonte{Autoria própria}
 \label{fig:graph_tests}
 \end{figure}
 
@@ -1594,8 +1594,6 @@ feitas reflexões sobre como esses objetivos foram alcançados.
 \begin{table}[!htb]
 \centering
 \caption{Objetivos atingidos pelo \textit{Framework} PON C++ 4.0}
-\caption*{Fonte: Autoria própria}
-\label{tab:obj_fw4_atingidos}
 \smallskip
 \begin{tabularx}{\textwidth}{|l|X|l|}\hline
     Objetivo & Proposta & Atingido  \\\hline\hline
@@ -1603,7 +1601,9 @@ feitas reflexões sobre como esses objetivos foram alcançados.
     Adicionar flexibilidade algorítmica & \textit{Condition} com expressões \textit{lambda} & Sim \\ \hline
     Reduzir a verbosidade da utilização & \textit{Builders} com \textit{variadic templates} & Sim \\ \hline
     Permitir execução com paralelismo & Notificações com políticas de execução & Sim \\ \hline
-\end{tabularx}
+    \end{tabularx}
+    \fonte{Autoria própria}
+    \label{tab:obj_fw4_atingidos}
 \end{table}
 
 A aplicação da programação genérica, por meio do uso de \textit{templates}
@@ -1774,8 +1774,6 @@ esta propriedade em futuras melhorias no \textit{framework}. A Tabela
 \begin{table}[!htb]
 \centering
 \caption{Propriedades elementares contempladas nas materializações do PON}
-\caption*{Fonte: Autoria própria}
-\label{tab:elementares_2}
 \smallskip
 \begin{threeparttable}
 \begin{tabularx}{\textwidth}{|l||*{9}{X|}}\hline
@@ -1796,6 +1794,8 @@ Fw. C++ Prot. & Fw. C++ 1.0 & Fw. C++ 2.0 & Fw. C++ 3.0 & \textbf{Fw. C++ 4.0} &
   \ref{sec:pon_dist}
 \end{tablenotes}
 \end{threeparttable}
+\fonte{Autoria própria}
+\label{tab:elementares_2}
 \end{table}
 
 Pelo fato do \textit{Framework} PON C++ 4.0 se tratar de uma evolução sobre o
@@ -1814,8 +1814,6 @@ flexível.
 \centering
 \caption{Conceitos do PON contemplados nas materializações do paradigma - com adição do \textit{Framework}
 PON C++ 4.0}
-\caption*{Fonte: Autoria própria}
-\label{tab:conceitos2}
 \smallskip
 \begin{threeparttable}
 \begin{tabularx}{\textwidth}{|l||*{9}{X|}}\hline
@@ -1845,6 +1843,8 @@ Impertinência dinâmica &&&&&&&\checkmark&&\\\hline
   \textit{Rules} do PON \cite{muchalski_2012}
 \end{tablenotes}
 \end{threeparttable}
+\fonte{Autoria própria}
+\label{tab:conceitos2}
 \end{table}
 
 Devido ao aumento da flexibilidade dado pela adição do conceito de
