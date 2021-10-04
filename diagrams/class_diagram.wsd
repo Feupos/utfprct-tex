@@ -1,0 +1,58 @@
+@startuml NOPUnreal
+
+together {
+    abstract class UObject
+    abstract class AActor
+    abstract class AInfo
+    abstract class APawn
+    abstract class UActorComponent
+    class AGameModeBase
+}
+
+class ABasePawn
+class APlayerPawn
+class AEnemyPawn
+class AShooterPawn
+class NOPSuicidePawn
+class ABomberPawn
+class AGameMode
+class AEnemySpawn
+class UBaseAbility
+
+class AProjectile
+class ABomb
+
+
+UObject <|-- AActor
+AActor <|-- APawn
+UObject <|-- UActorComponent
+AActor <|-- AInfo
+AInfo <|-- AGameModeBase
+
+APawn <|-- ABasePawn
+
+AGameModeBase <|-- AGameMode
+
+AActor <|-- AEnemySpawn
+
+UActorComponent <|-- UBaseAbility
+
+AActor <|-- AProjectile
+AActor <|-- ABomb
+
+ABasePawn <|-- APlayerPawn
+ABasePawn <|-- AEnemyPawn
+
+AEnemyPawn <|-- NOPSuicidePawn
+AEnemyPawn <|-- AShooterPawn
+AEnemyPawn <|-- ABomberPawn
+
+UBaseAbility <|-- FireProjectileAbility
+UBaseAbility <|-- FireMissileAbility
+UBaseAbility <|-- DropBombAbility
+
+AEnemySpawn "1" o-- "many" AEnemyPawn
+FireProjectileAbility "1" o-- "many" AProjectile
+DropBombAbility "1" o-- "many" ABomb
+
+@enduml

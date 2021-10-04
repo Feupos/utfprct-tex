@@ -115,6 +115,50 @@
 % Refinamento tipográfico: diminui badboxes
 \usepackage{microtype}%
 
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{cmap}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{nameref}
+\usepackage{caption}
+\usepackage{listings}
+
+\usepackage{tabularx}
+\usepackage{pgfgantt}
+\usepackage{verbatim}
+\usepackage{diagbox}
+\usepackage{amssymb}
+\usepackage{placeins}
+\usepackage{flafter}
+\usepackage{pdfpages}
+\usepackage{minted}
+%\usepackage{filecontents}
+\usepackage{pgfplots, pgfplotstable}
+\usepgfplotslibrary{statistics}
+\usepackage{lstautogobble}
+\usepackage{tablefootnote}
+\usepackage{threeparttable}
+%\usepackage[htt]{hyphenat}
+%\usepackage{titletoc}
+%\usepackage{titlesec}
+%\usepackage{tocloft}
+\usepackage{subcaption}
+\usepackage{tablefootnote}
+\usepackage{afterpage}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+\usepackage{pdfcomment}
+\usepackage{multicol}
+
+
 %% Comandos personalizados (\newcommand{name}[num]{definition})
 \newcommand{\cpp}{\texttt{C$++$}}%% C++
 \newcommand{\latex}{\LaTeX}%% LaTeX
@@ -151,6 +195,226 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%\includeonly{pre_texto, listas, introducao, revisao, desenvolvimento, resultados, conclusao, pos_texto}
+%\includeonly{introducao, revisao, desenvolvimento, resultados, conclusao}
+%\includeonly{pos_texto}
+
+\newcommand{\CodeSymbolBlue}[1]{\textcolor{NavyBlue}{#1}}
+\newcommand{\CodeSymbolGreen}[1]{\textcolor{OliveGreen}{#1}}
+\newcommand{\CodeSymbolPurple}[1]{\textcolor{DarkOrchid}{#1}}
+
+\pgfplotsset{log x ticks with fixed point/.style={xticklabel={
+        \pgfkeys{/pgf/fpu=true}
+        \pgfmathparse{exp(\tick)}%
+        \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+        \pgfkeys{/pgf/fpu=false}
+      }}, log y ticks with fixed point/.style={yticklabel={
+        \pgfkeys{/pgf/fpu=true}
+        \pgfmathparse{exp(\tick)}%
+        \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+        \pgfkeys{/pgf/fpu=false}
+      }}}
+
+\setminted{
+ fontsize=\footnotesize, 
+ escapeinside=||,
+ mathescape=true,
+ numbersep=5pt,
+ %linenos=true,
+ autogobble,
+ framesep=3mm} 
+
+%\tolerance=1 \emergencystretch=\maxdimen \hyphenpenalty=10000 \hbadness=10000
+
+\captionsetup{justification=centering,singlelinecheck=false,format=hang,skip=-1pt,font={footnotesize,bf},labelfont=bf}
+
+%\begin{comment}
+\newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+
+\let\oldlstlistoflistings\lstlistoflistings \renewcommand{\lstlistoflistings}{%
+ \begingroup%
+ \let\oldnumberline\numberline%
+ \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
+ \oldlstlistoflistings*%
+ \endgroup}
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+%\end{comment}
+
+\lstset{
+ numbers=left,
+ stepnumber=1,
+ language=C++,
+ autogobble=true,
+ aboveskip={1.3\baselineskip},
+ %basicstyle=\tiny\ttfamily,
+ basicstyle=\linespread{0.9}\tiny\ttfamily,
+ columns=fullflexible,
+ frame=single,
+ breaklines=true,
+ breakatwhitespace=true,
+ %postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+ commentstyle=\color[rgb]{0.127,0.427,0.514}\ttfamily\itshape,
+ keywordstyle=\color[HTML]{228B22}\bfseries,
+ identifierstyle=\color{black},
+ %frame=single,
+ %frame=single,
+ %numbers=left,
+ numbers=none,
+ numberstyle=\tiny,
+ stepnumber=1,
+ showstringspaces=false,
+ captionpos=t,
+ literate=
+{á}{{\'a\lst@whitespacefalse}}1
+{à}{{\`a\lst@whitespacefalse}}1
+{ã}{{\~a\lst@whitespacefalse}}1
+{é}{{\'e\lst@whitespacefalse}}1
+{ê}{{\^e\lst@whitespacefalse}}1
+{â}{{\^a\lst@whitespacefalse}}1
+{í}{{\'i\lst@whitespacefalse}}1
+{ó}{{\'o\lst@whitespacefalse}}1
+{õ}{{\~o\lst@whitespacefalse}}1
+{ú}{{\'u\lst@whitespacefalse}}1
+{ü}{{\"u\lst@whitespacefalse}}1
+{ç}{{\c{c}\lst@whitespacefalse}}1
+}
+\makeatletter
+
+\begin{comment}
+{NOP::SharedAttribute}{{\CodeSymbolGreen{NOP::SharedAttribute}}}1
+{Boolean}{{\CodeSymbolGreen{Boolean}}}1
+{Premise }{{\CodeSymbolGreen{Premise }}}1
+{Instigation }{{\CodeSymbolGreen{Instigation }}}1
+{ParallelInstigation }{{\CodeSymbolGreen{ParallelInstigation }}}1
+{Action }{{\CodeSymbolGreen{Action }}}1
+{ParallelAction }{{\CodeSymbolGreen{ParallelAction }}}1
+{RuleObject}{{\CodeSymbolGreen{RuleObject}}}1
+{Method}{{\CodeSymbolGreen{Method}}}1
+{MethodPointer}{{\CodeSymbolGreen{MethodPointer}}}1
+{add}{{\CodeSymbolBlue{add}}}1
+{end}{{\CodeSymbolBlue{end}}}1
+{NOP::BuildAction}{{\CodeSymbolBlue{NOP::BuildAction}}}1
+{NOP::BuildInstigation}{{\CodeSymbolBlue{NOP::BuildInstigation}}}1
+{NOP::BuildRule}{{\CodeSymbolBlue{NOP::BuildRule}}}1
+{BOOLEAN}{{\CodeSymbolPurple{BOOLEAN}}}1
+{PREMISE}{{\CodeSymbolPurple{PREMISE}}}1
+{RULE}{{\CodeSymbolPurple{RULE}}}1
+{INSTIGATION\_NAMED}{{\CodeSymbolPurple{INSTIGATION\_NAMED}}}1
+{SingletonFactory}{{\CodeSymbolGreen{SingletonFactory}}}1
+{SingletonScheduler}{{\CodeSymbolGreen{SingletonScheduler}}}1
+{changeStructure}{{\CodeSymbolBlue{changeStructure}}}1
+{changeScheduler}{{\CodeSymbolBlue{changeScheduler}}}1
+{addPremise}{{\CodeSymbolBlue{addPremise}}}1
+{addInstigation}{{\CodeSymbolBlue{addInstigation}}}1
+{FBE}{{\CodeSymbolGreen{FBE}}}1
+{NOPApplication}{{\CodeSymbolGreen{NOPApplication}}}1
+{NOP::SharedAttribute}{{\CodeSymbolGreen{NOP::SharedAttribute}}}1
+{NOP::Equal()}{{\CodeSymbolGreen{NOP::Equal()}}}1
+{NOP::SharedPremise }{{\CodeSymbolGreen{NOP::SharedPremise }}}1
+{NOP::SharedCondition }{{\CodeSymbolGreen{NOP::SharedCondition }}}1
+{NOP::SharedAction }{{\CodeSymbolGreen{NOP::SharedAction }}}1
+{NOP::SharedRule }{{\CodeSymbolGreen{NOP::SharedRule }}}1
+{NOP::SharedInstigation }{{\CodeSymbolGreen{NOP::SharedInstigation }}}1
+{NOP::BuildAttribute}{{\CodeSymbolBlue{NOP::BuildAttribute}}}1
+{NOP::BuildPremise}{{\CodeSymbolBlue{NOP::BuildPremise}}}1
+{NOP::BuildCondition}{{\CodeSymbolBlue{NOP::BuildCondition}}}1
+{NOP::BuildAction}{{\CodeSymbolBlue{NOP::BuildAction}}}1
+{NOP::BuildInstigation}{{\CodeSymbolBlue{NOP::BuildInstigation}}}1
+{NOP::BuildRule}{{\CodeSymbolBlue{NOP::BuildRule}}}1
+{SharedAttribute}{{\CodeSymbolGreen{SharedAttribute}}}1
+{SharedPremise }{{\CodeSymbolGreen{SharedPremise }}}1
+{SharedCondition }{{\CodeSymbolGreen{SharedCondition }}}1
+{SharedAction }{{\CodeSymbolGreen{SharedAction }}}1
+{SharedRule }{{\CodeSymbolGreen{SharedRule }}}1
+{SharedInstigation }{{\CodeSymbolGreen{SharedInstigation }}}1
+{BuildAttribute}{{\CodeSymbolBlue{BuildAttribute}}}1
+{BuildPremise}{{\CodeSymbolBlue{BuildPremise}}}1
+{BuildCondition}{{\CodeSymbolBlue{BuildCondition}}}1
+{BuildAction}{{\CodeSymbolBlue{BuildAction}}}1
+{BuildInstigation}{{\CodeSymbolBlue{BuildInstigation}}}1
+{BuildRule}{{\CodeSymbolBlue{BuildRule}}}1
+{CONDITION}{{\CodeSymbolPurple{CONDITION}}}1
+{METHOD}{{\CodeSymbolPurple{METHOD}}}1
+{fbe}{{\CodeSymbolGreen{fbe }}}1
+{end\_}{{\CodeSymbolGreen{end\_}}}1
+{condition}{{\CodeSymbolGreen{condition }}}1
+{action}{{\CodeSymbolGreen{action }}}1
+{instigation}{{\CodeSymbolGreen{instigation }}}1
+{method}{{\CodeSymbolGreen{method }}}1
+{attribution}{{\CodeSymbolGreen{attribution }}}1
+\end{comment}
+
+\definecolor{commentgreen}{RGB}{2,112,10}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{weborange}{RGB}{255,165,0}
+\definecolor{frenchplum}{RGB}{129,20,83}
+
+\lstdefinelanguage{elixir}{
+    morekeywords={case,catch,def,do,else,false,%
+        use,alias,receive,timeout,defmacro,defp,%
+        for,if,import,defmodule,defprotocol,%
+        nil,defmacrop,defoverridable,defimpl,%
+        super,fn,raise,true,try,end,with,%
+        unless},
+    otherkeywords={<-,->, |>, \%\{, \}, \{, \, (, )},
+    sensitive=true,
+    morecomment=[l]{\#},
+    morecomment=[n]{/*}{*/},
+    %morecomment=[s][\color{purple}]{:}{\ },
+    %morestring=[s][\color{orange}]"",
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    stringstyle=\color{red},
+	%basicstyle=\ttfamily,
+	breaklines,
+	%showstringspaces=false,
+	%frame=tb
+}
+
+\lstdefinelanguage{nopl}{
+    morekeywords={fbe,end_fbe,rule,end_rule,premise,end_premise,
+        condition,end_condition,assignment,end_assignment,action,end_action,
+        instigation, end_instigation, method, end_method, attribution, end_attribution},
+    morekeywords=[2]{parallel, call, private, this, integer, boolean, public, and, or, sequential},
+    %sensitive=true,
+    morecomment=[l]{\#},
+    morecomment=[n]{/*}{*/},
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    keywordstyle=[2]{\color{commentgreen}},
+    stringstyle=\color{red},
+	breaklines,
+}
+\lst@Key{source}{}{\def\lst@source{#1}}
+
+\let\orig@lst@MakeCaption=\lst@MakeCaption
+\def\lst@MakeCaption#1{%
+    \orig@lst@MakeCaption#1%
+    \ifx b#1%
+        \ifx\lst@source\@empty\else
+            \noindent
+            \expandafter\lst@makesourcebox\expandafter{\lst@source}%
+            %\vskip\belowcaptionskip
+        \fi
+    \fi
+}
+
+\def\lst@makesourcebox#1{%
+    \makebox[\linewidth][c]{\footnotesize\bfseries\textrm{Fonte: #1}}%
+}
+
+\newcommand{\vertLineFromPoint}[1]{
+  \draw[dashed] 
+  (#1) -- (#1|-{rel axis cs:0,0})
+}
+\newcommand{\horLineFromPoint}[1]{
+  \draw[dashed] 
+  (#1) -- (#1-|{rel axis cs:0,0})
+}
+
+\renewcommand{\cellalign}{cl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -226,14 +490,14 @@
 %% 1) Aceita o path para o PDF (insere a primeira página)
 %% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct' (placeholder)
 %%
-\incluirfichacatalografica{./PreTexto/ficha_catalografica_exemplo.pdf}%%1
+%\incluirfichacatalografica{./PreTexto/ficha_catalografica_exemplo.pdf}%%1
 %\incluirfichacatalografica{template}%%2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Errata
-\include{./PreTexto/errata}%% Comente para remover este item
+%\include{./PreTexto/errata}%% Comente para remover este item
 
 %% Folha ou Termo de aprovação (comente para remover este item)
 %% A folha de aprovação é entregue ao autor, quando aprovado, após
@@ -241,7 +505,10 @@
 %% 1) Aceita o path para o PDF (insere a primeira página)
 %% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct', que pode servir de placeholder.
 %%
-\incluirfolhadeaprovacao{./PreTexto/folha_de_aprovacao_exemplo.pdf}%%1
+\incluirfolhadeaprovacao{../extra/aprovacao.pdf}%%1
+
+%\include{pre_texto}
+
 %\incluirfolhadeaprovacao{template}%2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -282,7 +549,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de algoritmos
 %%
-\incluirlistadealgoritmos%% Comente para remover este item
+%\incluirlistadealgoritmos%% Comente para remover este item
+
+%\pdfbookmark[0]{\lstlistlistingname}{loc}%% Marcador
+%\begin{Spacing}{1.0}%% Espaçamento simples entre linhas
+%  \lstlistoflistings*%% Impressão da lista de algoritmos
+%
+%\end{Spacing}
+
+
+%\cleardoublepage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -352,36 +629,11 @@
 %%
 \textual%% Não comente esta linha
 
-%% Parte
-% \part{Introdução}%% Comente para remover este item
-
-%% Capítulo
-\include{./Capitulo1/capitulo1}%% Comente para remover este item
-
-%% Parte
-% \part{Desenvolvimento}%% Comente para remover este item
-
-%% Capítulo
-\include{./Capitulo2/capitulo2}%% Comente para remover este item
-
-%% Capítulo
-\include{./Capitulo3/capitulo3}%% Comente para remover este item
-
-%% Capítulo
-\include{./Capitulo4/capitulo4}%% Comente para remover este item
-
-%% Parte
-% \part{Conclusão}%% Comente para remover este item
-
-%% Capítulo
-\include{./Capitulo5/capitulo5}%% Comente para remover este item
-
-%% Capítulos após este comando criam marcadores do pdf na raiz
-% \phantompart%% Comente para remover este item
-
-%% Capítulo de exemplo
-\include{./CapituloExemplo/capituloexemplo}%% Comente para remover este item
-
+\include{introducao}
+\include{revisao}
+\include{desenvolvimento}
+\include{resultados}
+\include{conclusao}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -403,7 +655,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Glossário
 %%
-\incluirglossario%% Comente para remover este item
+%\incluirglossario%% Comente para remover este item
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -412,8 +664,9 @@
 %%
 \begin{arquivosdeapendices}%% Os arquivos de apêndices devem se incluídos neste ambiente - Não comente esta linha
   \partapendices%% Página de início dos apêndices - Comente para remover este item
-  \include{./PosTexto/apendicea}%% Apêndice - Comente para remover este item
-  \include{./PosTexto/apendiceb}%% Apêndice - Comente para remover este item
+%  \include{./PosTexto/apendicea}%% Apêndice - Comente para remover este item
+%  \include{./PosTexto/apendiceb}%% Apêndice - Comente para remover este item
+  \include{pos_texto}
 \end{arquivosdeapendices}%% Não comente esta linha
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -421,11 +674,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Arquivos de anexos
 %%
-\begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha  
-  \partanexos%% Página de início dos anexos - Comente para remover este item (ver Bug0001)
-  \include{./PosTexto/anexoa}%% Anexo - Comente para remover este item
+%\begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha  
+%  \partanexos%% Página de início dos anexos - Comente para remover este item (ver Bug0001)
+  %\include{./PosTexto/anexoa}%% Anexo - Comente para remover este item
 %  %\include{./PosTexto/anexob}%% Anexo - Comente para remover este item
-\end{arquivosdeanexos}%% Não comente esta linha
+%\include{pos_texto}
+%\end{arquivosdeanexos}%% Não comente esta linha
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

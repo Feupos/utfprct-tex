@@ -1,0 +1,29 @@
+image: gcc:10.2
+
+stages:
+  - build
+  - test
+
+gcc-build:
+  stage: build
+  script:
+    - apt-get update && apt-get -y install python3-pip
+    - pip3 install cmake && pip3 install ninja
+    - mkdir build && cd build
+    - cmake .. -G Ninja -DLIBNOP_SCHEDULER_ENABLE=ON
+    - ninja
+  artifacts:
+    when: always
+    paths:
+      - build/libnop.a
+
+google-test:
+  stage: test
+  script:
+    - apt-get update && apt-get -y install python3-pip
+    - pip3 install cmake && pip3 install ninja && pip3 install gcovr
+    - mkdir test && cd test
+    - cmake .. -G Ninja -DLIBNOP_TEST_ENABLE=ON -DLIBNOP_LOG_ENABLE=ON -DLIBNOP_COVERAGE_ENABLE=ON -DLIBNOP_SCHEDULER_ENABLE=ON
+    - ninja
+    - libnop_gtest/libnop_gtest
+    - python3 -m gcovr -r .. --exclude _deps

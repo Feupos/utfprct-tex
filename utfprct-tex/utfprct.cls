@@ -1245,7 +1245,9 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhasingles}}\\[10pt]%% Título do documento (em ingles)
 		{\large{\imprimirtituloemmultiplaslinhas}}\\[35pt]
     }{
+      \vspace{-70pt}
 		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
+    {\large{\imprimirtituloemmultiplaslinhasingles}}\\[10pt]%% Título do documento (em ingles)
     }
 
   \end{center}

@@ -1,0 +1,26 @@
+@startuml rules
+frame "**FBE** Alarm"{
+  package "Rules"{
+    frame "rlAlarm" as rl {
+      frame "Condition" as cn2{
+        [ prAlarmOn **AND** prSensor]
+      }
+
+      frame "Action" as ac2 {
+        [Instigate **Method** mtRingSiren]
+      }
+      cn2 --[hidden]> ac2
+    }
+  }
+
+    package "Premises"{
+   frame prAlarmOn{
+      [**FBE** Alarm **Attribute** atOn == true]
+   }
+   frame prSensor{
+      [**FBE** Sensor **Attribute** atStatus == true]
+   }
+   prAlarmOn --[hidden]> prSensor
+}
+}
+@enduml

@@ -1,0 +1,26 @@
+@startuml nop_fw4_observer
+
+abstract Observer
+{
+    {abstract} void Update(bool reNotify)
+}
+
+abstract Observable
+{
+    {abstract} void Attach(const std::shared_ptr<Observer>& observer)
+    {abstract} void Detach(const std::weak_ptr<Observer>& observer)
+    {abstract} void Notify(const bool reNotify)
+    std::vector<std::weak_ptr<Observer>> observers_;
+}
+
+Rule -up-|> Observer
+Condition -up-|> Observer
+Premise -up-|> Observer
+
+Condition -up-|> Observable
+Premise -up-|> Observable
+Attribute -up-|> Observable
+
+Observable o-right- "1..*" Observer
+
+@enduml

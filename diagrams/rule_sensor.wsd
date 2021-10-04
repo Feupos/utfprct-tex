@@ -1,0 +1,31 @@
+@startuml rules
+
+skinparam nodesep 10
+skinparam ranksep 20
+scale 1.0
+
+frame "**FBE** Sensor"{
+  'package "Rules"{
+    frame "rlSensor" as rl {
+      frame "Condition" as cn2{
+        [ prIsActivated **AND** prIsNotRead]
+      }
+
+      frame "Action" as ac2 {
+        [Instigate **Method** mtSensor]
+      }
+      cn2 --[hidden]> ac2
+    }
+  '}
+
+  'package "Premises"{
+   frame prIsNotRead as pr1{
+      [**Attribute** atIsRead == false]
+   }
+   frame prIsActivated as pr2{
+      [**Attribute** atIsActivated == true]
+   }
+   pr1 --[hidden]> pr2
+  '}
+}
+@enduml

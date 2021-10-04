@@ -3,5 +3,46 @@
 %% Apresentação concisa dos pontos relevantes de um texto, fornecendo uma visão rápida e clara do conteúdo e das conclusões do trabalho.
 
 \begin{resumoutfpr}%% Ambiente resumoutfpr
-O resumo deve ser redigido na terceira pessoa do singular, com verbo na voz ativa, não ultrapassando uma página (de 150 a 500 palavras, segundo a ABNT NBR 6028), evitando-se o uso de parágrafos no meio do resumo, assim como fórmulas, equações e símbolos. Iniciar o resumo situando o trabalho no contexto geral, apresentar os objetivos, descrever a metodologia adotada, relatar a contribuição própria, comentar os resultados obtidos e finalmente apresentar as conclusões mais importantes do trabalho. As palavras-chave devem aparecer logo abaixo do resumo, antecedidas da expressão Palavras-chave. Para definição das palavras-chave (e suas correspondentes em inglês no \textit{abstract}) consultar em Termo tópico do Catálogo de Autoridades da Biblioteca Nacional, disponível em: \url{http://acervo.bn.br/sophia_web/index.html}.
+O Paradigma Orientado a Notificações (PON) é uma nova abordagem para a
+construção de sistemas computacionais. O PON propõe a computação por meio de um
+modelo de entidades reativas desacopladas que interagem por meio de notificações
+pontuais, dentre as quais se divide e separa a computação facto-execucional da
+computação lógico-causal. Com isso é possível reduzir ou eliminar redundâncias
+temporais e estruturais, comuns em outros paradigmas de programação, que podem
+afetar o desempenho dos programas. Ainda, o desacoplamento intrínseco entre as
+entidades do PON facilita a construção de sistemas concorrentes e/ou
+distribuídos. Além disso, a estrutura orientada a regras do PON tende a
+facilitar o desenvolvimento por permitir programar em alto nível de abstração. O
+PON apresenta várias materializações em \textit{software}, sendo as mais maduras
+tecnologicamente aquelas que se dão por meio de \textit{frameworks},
+desenvolvidos em diferentes linguagens de programação. Dentre estes
+\textit{frameworks} o que apresenta o maior grau de maturidade e estabilidade é
+o \textit{Framework} PON C++ 2.0. Entretanto, o \textit{Framework} PON C++ 2.0
+ainda apresenta certas limitações, como excessiva verbosidade, baixa
+flexibilidade de tipos e baixa flexibilidade algorítmica. Nesse contexto este
+trabalho propõe o desenvolvimento de um novo \textit{framework}, denominado
+\textit{Framework} PON C++ 4.0, com o objetivo de remover as limitações
+presentes no \textit{Framework} PON C++ 2.0, bem como as imperfeições do
+\textit{Framework} PON C++ 3.0  que envolve \textit{multithread/multicore}, de
+forma a melhorar a usabilidade do PON e seu desempenho neste âmbito. O
+\textit{Framework} PON C++ 4.0 é desenvolvido utilizando técnicas de programação
+genérica, por meio de recursos adicionados nas versões do padrão ISO C++11,
+C++14, C++17 e C++20, bem como aplicando o método de desenvolvimento orientado a
+testes. Esta dissertação de mestrado apresenta os resultados obtidos com a
+implementação do \textit{Framework} PON C++ 4.0 por meio de um conjunto de
+aplicações pertinentes, tanto em ambiente \textit{single thread} quanto
+\textit{multithread}/\textit{multicore}. Tais aplicações são um sistema de
+sensores e uma aplicação de controle automatizado de tráfego, oriundos do grupo
+de pesquisa, e dos algoritmos \textit{Bitonic Sort} e \textit{Random Forest}
+oriundos da literatura. Tais aplicações foram executadas e comparadas em termos
+de desempenho com as mesmas aplicações implementadas no \textit{Framework} PON
+C++ 2.0, \textit{Framework} PON Elixir/Erlang e também implementações no
+Paradigma Orientado a Objetos (POO) em linguagem de programação C++ e Paradigma
+Procedimental (PP) em linguagem de programação C. Como resultado destas
+comparações, o novo \textit{Framework} PON C++ 4.0 se mostra superior ao
+\textit{Framework} PON C++ 2.0 tanto em tempo de execução como consumo de
+memória nos cenários avaliados, além de apresentar balanceamento de carga
+comparável aos do \textit{Framework} PON Elixir/Erlang em ambiente
+\textit{multicore}. As melhorias na usabilidade são adicionalmente avaliadas e
+atestadas pelo \textit{feedback} de desenvolvedores do PON.
 \end{resumoutfpr}

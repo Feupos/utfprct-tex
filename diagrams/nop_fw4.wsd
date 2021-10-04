@@ -1,0 +1,25 @@
+@startuml nop_fw4
+
+skinparam linetype ortho
+
+class Scheduler #DarkRed
+note right of Scheduler
+    Não implementada
+end note
+
+
+Rule "1" o-- "1" Condition
+Condition "1..*" o-- "1..*" Premise
+Condition "1..*" o-- "1..*" Condition
+Premise "1" o-- "2" Attribute
+
+Rule o-up- Scheduler
+Rule o-- Action
+Action o-- Instigation
+Instigation o-- Method
+
+Method -left-> Attribute : modify
+FBE *-right- Attribute : compose
+FBE *-left- Method : compose
+
+@enduml

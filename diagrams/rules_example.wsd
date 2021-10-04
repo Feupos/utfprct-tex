@@ -1,0 +1,29 @@
+@startuml rules
+top to bottom direction
+package "Rules"{
+  frame "Rule Alarm 1" as rl1 {
+    frame "Condition" as cn1 {
+      [prAlarmOn **AND** prSensor1]
+    }
+
+    frame "Action" as ac1{
+      [Instigate **Method** mtRingSiren1]
+    }
+    cn1 --[hidden]> ac1
+  }
+  
+
+
+  frame "Rule Alarm 2" {
+    frame "Condition" as cn2{
+      [prAlarmOn **AND** prSensor2]
+    }
+
+    frame "Action" as ac2 {
+      [Instigate **Method** mtRingSiren2]
+    }
+    cn2 --[hidden]> ac2
+  }
+
+}
+@enduml

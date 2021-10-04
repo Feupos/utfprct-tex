@@ -1,0 +1,594 @@
+fbe Semaphore_CTA
+
+    private Integer atSemaphoreState = 5
+    public Integer atSeconds = 0
+
+    private method mtResetTimer
+        assignment
+            this.atSeconds = 0
+        end_assignment
+    end_method
+
+    private method mtHorizontalTrafficLightGREEN
+        assignment
+            this.atSemaphoreState = 0
+        end_assignment
+    end_method
+
+    private method mtHorizontalTrafficLightYELLOW
+        assignment
+            this.atSemaphoreState = 1
+        end_assignment
+    end_method
+
+    private method mtHorizontalTrafficLightRED
+        assignment
+            this.atSemaphoreState = 2
+        end_assignment
+    end_method
+
+    private method mtVerticalTrafficLightGREEN
+        assignment
+            this.atSemaphoreState = 3
+        end_assignment
+    end_method
+
+    private method mtVerticalTrafficLightYELLOW
+        assignment
+            this.atSemaphoreState = 4
+        end_assignment
+    end_method
+
+    private method mtVerticalTrafficLightRED
+        assignment
+            this.atSemaphoreState = 5
+        end_assignment
+    end_method
+
+    rule rlHorizontalTrafficLightGreen
+        condition
+                premise prSeconds
+                    this.atSeconds == 2
+                end_premise
+                and
+                premise prSemaphoreState
+                    this.atSemaphoreState == 5
+                end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHorizontalTrafficLightGREEN()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlHorizontalTrafficLightYellow
+        condition
+            premise prSeconds2
+                this.atSeconds == 40
+            end_premise
+            and
+            premise prSemaphoreState2
+                this.atSemaphoreState == 0
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHorizontalTrafficLightYELLOW()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlHorizontalTrafficLightRed
+        condition
+            premise prAtSeconds3
+                this.atSeconds == 45 
+            end_premise
+            and
+            premise prSemaphoreState3
+                this.atSemaphoreState == 1 
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHorizontalTrafficLightRED()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlVerticalTrafficLightGreen
+        condition
+            premise prAtSeconds4
+                this.atSeconds == 47
+            end_premise
+            and
+            premise prSemaphoreState4
+                this.atSemaphoreState == 2
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVerticalTrafficLightGREEN()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlVerticalTrafficLightYellow
+        condition
+            premise prAtSeconds5
+                this.atSeconds == 85
+            end_premise
+            and
+            premise prSemaphoreState5
+                this.atSemaphoreState == 3
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVerticalTrafficLightYELLOW()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlVerticalTrafficLightRed
+        condition
+            premise prAtSeconds6
+                this.atSeconds == 90
+            end_premise
+            and
+            premise prSemaphoreState6
+                this.atSemaphoreState == 4
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVerticalTrafficLightRED()
+                call this.mtResetTimer()
+            end_instigation
+        end_action
+    end_rule
+
+end_fbe
+
+fbe Semaphore_CBCL
+
+    private Integer atSemaphoreState = 5
+    public Integer atSeconds = 0
+	private integer atHVSS = 0
+	private integer atVVSS = 0
+
+    private method mtRT
+        assignment
+            this.atSeconds = 0
+        end_assignment
+    end_method
+
+    private method mtHTLG
+        assignment
+            this.atSemaphoreState = 0
+        end_assignment
+    end_method
+
+    private method mtHTLY
+        assignment
+            this.atSemaphoreState = 1
+        end_assignment
+    end_method
+
+    private method mtHTLR
+        assignment
+            this.atSemaphoreState = 2
+        end_assignment
+    end_method
+
+    private method mtVTLG
+        assignment
+            this.atSemaphoreState = 3
+        end_assignment
+    end_method
+
+    private method mtVTLY
+        assignment
+            this.atSemaphoreState = 4
+        end_assignment
+    end_method
+
+    private method mtVTLR
+        assignment
+            this.atSemaphoreState = 5
+        end_assignment
+    end_method
+	
+	private method mtHTLGCBCL
+        assignment
+            this.atSemaphoreState = 6
+        end_assignment
+    end_method
+
+    private method mtHTLYCBCL
+        assignment
+            this.atSemaphoreState = 7
+        end_assignment
+    end_method
+
+    private method mtVTLGCBCL
+        assignment
+            this.atSemaphoreState = 8
+        end_assignment
+    end_method
+
+    private method mtVTLYCBCL
+        assignment
+            this.atSemaphoreState = 9
+        end_assignment
+    end_method
+
+    rule rlCBCL1
+        condition
+                premise prSeconds
+                    this.atSeconds == 2
+                end_premise
+                and
+                premise prSemaphoreState
+                    this.atSemaphoreState == 5
+                end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLG()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL2
+        condition
+            premise prSeconds2
+                this.atSeconds == 38
+            end_premise
+            and
+            premise prSemaphoreState2
+                this.atSemaphoreState == 0
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLY()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL3
+        condition
+            premise prSecondsCBCL2
+                this.atSeconds == 30 
+            end_premise
+            and
+            premise prSemaphoreStateCBCL2
+                this.atSemaphoreState == 6
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLY()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL4
+        condition
+            premise prSeconds3
+                this.atSeconds == 5
+            end_premise
+            and
+            premise prSemaphoreState3
+                this.atSemaphoreState == 1
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLR()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL5
+        condition
+            premise prSecondsCBCL3
+                this.atSeconds == 6
+            end_premise
+            and
+            premise prSemaphoreStateCBCL3
+                this.atSemaphoreState == 7
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLR()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL6
+        condition
+            premise prSeconds4
+                this.atSeconds == 2
+            end_premise
+            and
+            premise prSemaphoreState4
+                this.atSemaphoreState == 2
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLG()
+                call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+	
+	rule rlCBCL7
+        condition
+                premise prSeconds5
+                    this.atSeconds == 38
+                end_premise
+                and
+                premise prSemaphoreState5
+                    this.atSemaphoreState == 3
+                end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLY()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL8
+        condition
+            premise prSecondsCBCL5
+                this.atSeconds == 30
+            end_premise
+            and
+            premise prSemaphoreStateCBCL5
+                this.atSemaphoreState == 8
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLY()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL9
+        condition
+            premise prSeconds6
+                this.atSeconds == 5
+            end_premise
+            and
+            premise prSemaphoreState6
+                this.atSemaphoreState == 4
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLR()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL10
+        condition
+            premise prSecondsCBCL6
+                this.atSeconds == 6
+            end_premise
+            and
+            premise prSemaphoreStateCBCL6
+                this.atSemaphoreState == 9
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLR()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL11
+        condition
+            premise prSeconds7
+                this.atSeconds <= 17
+            end_premise
+            and
+            premise prSemaphoreState7
+                this.atSemaphoreState == 0
+            end_premise
+			and
+			premise prVehicleSensorState7 
+				this.atVVSS == 1
+			end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLGCBCL()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL12
+        condition
+            premise prSeconds7Full
+                this.atSeconds <= 17
+            end_premise
+            and
+            premise prSemaphoreState7Full
+                this.atSemaphoreState == 0
+            end_premise
+			and
+			premise prVehicleSensorState7Full 
+				this.atVVSS == 2
+			end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLGCBCL()
+            end_instigation
+        end_action
+    end_rule
+	
+	rule rlCBCL13
+        condition
+            premise prSeconds8
+                this.atSeconds >= 18
+            end_premise
+            and
+			premise prSecondsSup8
+                this.atSeconds < 32
+            end_premise
+            and
+            premise prSemaphoreState8
+                this.atSemaphoreState == 0
+            end_premise
+			and
+			premise prVehicleSensorState8 
+				this.atVVSS == 1
+			end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLYCBCL()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL14
+        condition
+            premise prSeconds8Full
+                this.atSeconds >= 18
+            end_premise
+            and
+			premise prSecondsSup8Full
+                this.atSeconds < 32
+            end_premise
+            and
+            premise prSemaphoreState8Full
+                this.atSemaphoreState == 0
+            end_premise
+			and
+			premise prVehicleSensorState8Full 
+				this.atVVSS == 2
+			end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtHTLYCBCL()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL15
+        condition
+            premise prSeconds9
+                this.atSeconds <= 17
+            end_premise
+            and
+            premise prSemaphoreState9
+                this.atSemaphoreState == 3
+            end_premise
+            and
+			premise prVehicleSensorState9
+                this.atSemaphoreState == 1 
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLGCBCL()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL16
+        condition
+            premise prSeconds9Full
+                this.atSeconds <= 77
+            end_premise
+            and
+            premise prSemaphoreState9Full
+                this.atSemaphoreState == 3
+            end_premise
+            and
+			premise prVehicleSensorState9Full
+				this.atSemaphoreState == 2
+			end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLGCBCL()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL17
+        condition
+            premise prSeconds10
+                this.atSeconds >= 18
+            end_premise
+            and
+            premise prSecondsSup10
+                this.atSeconds < 32
+            end_premise
+            and
+			premise prSemaphoreState10
+                this.atSemaphoreState == 3
+            end_premise
+            and
+            premise prVehicleSensorState10
+                this.atHVSS == 1
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLYCBCL()
+				call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+    rule rlCBCL18
+        condition
+            premise prSeconds10Full
+                this.atSeconds >= 18
+            end_premise
+            and
+            premise prSecondsSup10Full
+                this.atSeconds < 32
+            end_premise
+            and
+			premise prSemaphoreState10Full
+                this.atSemaphoreState == 3
+            end_premise
+            and
+            premise prVehicleSensorState10Full
+                this.atHVSS == 2
+            end_premise
+        end_condition
+        action sequential
+            instigation parallel
+                call this.mtVTLYCBCL()
+                call this.mtRT()
+            end_instigation
+        end_action
+    end_rule
+
+end_fbe

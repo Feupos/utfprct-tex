@@ -1,0 +1,64 @@
+@startuml NOP4Unreal
+
+together {
+    abstract class UObject
+    abstract class AActor
+    abstract class AInfo
+    abstract class APawn
+    abstract class UActorComponent
+    class AGameModeBase
+}
+
+class FBE
+class ANOP4BasePawn
+class ANOP4PlayerPawn
+class ANOP4EnemyPawn
+class ANOP4ShooterPawn
+class NOP4SuicidePawn
+class ANOP4BomberPawn
+class ANOP4GameMode
+class ANOP4EnemySpawn
+class UBaseAbility
+
+class AProjectile
+class ABomb
+
+
+
+
+UObject <|-- AActor
+AActor <|-- APawn
+UObject <|-- UActorComponent
+AActor <|-- AInfo
+AInfo <|-- AGameModeBase
+
+APawn <|-- ANOP4BasePawn
+FBE <|-- ANOP4BasePawn
+
+AGameModeBase <|-- ANOP4GameMode
+FBE <|-- ANOP4GameMode
+
+AActor <|-- ANOP4EnemySpawn
+FBE <|-- ANOP4EnemySpawn
+
+UActorComponent <|-- UBaseAbility
+
+AActor <|-- AProjectile
+AActor <|-- ABomb
+
+ANOP4BasePawn <|-- ANOP4PlayerPawn
+ANOP4BasePawn <|-- ANOP4EnemyPawn
+
+ANOP4EnemyPawn <|-- NOP4SuicidePawn
+ANOP4EnemyPawn <|-- ANOP4ShooterPawn
+ANOP4EnemyPawn <|-- ANOP4BomberPawn
+
+UBaseAbility <|-- FireProjectileAbility
+UBaseAbility <|-- FireMissileAbility
+UBaseAbility <|-- DropBombAbility
+
+ANOP4EnemySpawn "1" o-- "many" ANOP4EnemyPawn
+FireProjectileAbility "1" o-- "many" AProjectile
+DropBombAbility "1" o-- "many" ABomb
+
+@enduml

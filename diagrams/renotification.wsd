@@ -1,0 +1,17 @@
+@startuml renotif
+
+start
+:Seta estado;
+
+if (Estado foi modificado?) then (não)
+    if (Deve renotificar?) then (não)
+        stop
+    else (sim)
+    endif
+else (sim)
+endif
+:Gera notificações;
+
+stop
+
+@enduml

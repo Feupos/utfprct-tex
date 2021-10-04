@@ -1,0 +1,15 @@
+@startuml premises
+package "Premises"{
+   frame prAlarmOn{
+      [**FBE** Alarm **Attribute** atOn == true]
+   }
+   frame prSensor1{
+      [**FBE** Sensor1 **Attribute** atStatus == true]
+   }
+   frame prSensor2{
+      [**FBE** Sensor2 **Attribute** atStatus == true]
+   }
+   prAlarmOn --[hidden]> prSensor1
+   prSensor1 --[hidden]> prSensor2
+}
+@enduml

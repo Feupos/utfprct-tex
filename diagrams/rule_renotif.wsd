@@ -1,0 +1,13 @@
+@startuml rules_renotif
+frame "**Rule** Alarm"{
+  package "Rules"{
+    frame "Condition" as cn2{
+        [**FBE** Sensor **Attribute** atStatus == true]
+    }
+
+    frame "Action" as ac2 {
+    [Instigate **Method** mtRingSirenMilliseconds(100)]
+    }
+    cn2 --[hidden]> ac2
+}
+@enduml
