@@ -272,9 +272,9 @@ consumo dos \textit{frameworks}.
 
 \begin{figure}[!htb]
 \centering
+\caption{Consumo de memória POO em C++}
 \includegraphics[width=\textwidth]{../figures/poo_mem.png}
 \smallskip
-\caption{Consumo de memória POO em C++}
 \caption*{Fonte: Autoria própria}
 \label{fig:poo_mem}
 \end{figure}
@@ -291,9 +291,9 @@ experimento.
 
 \begin{figure}[!htb]
 \centering
+\caption{Consumo de memória \textit{Framework} PON C++ 2.0}
 \includegraphics[width=\textwidth]{../figures/fw2_mem.png}
 \smallskip
-\caption{Consumo de memória \textit{Framework} PON C++ 2.0}
 \caption*{Fonte: Autoria própria}
 \label{fig:fw2_mem}
 \end{figure}
@@ -307,9 +307,9 @@ utilização dos \textit{smart pointers}.
 
 \begin{figure}[!htb]
 \centering
+\caption{Consumo de memória \textit{Framework} PON C++ 4.0}
 \includegraphics[width=\textwidth]{../figures/fw4_mem.png}
 \smallskip
-\caption{Consumo de memória \textit{Framework} PON C++ 4.0}
 \caption*{Fonte: Autoria própria}
 \label{fig:fw4_mem}
 \end{figure}
@@ -355,9 +355,9 @@ em ambientes multiprocessados.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/bitonic_sort_mod.png}
+\caption{Processo de ordenação com \textit{Bitonic Sort}} \includegraphics[width=\textwidth]{../figures/bitonic_sort_mod.png}
 \smallskip
-\caption{Processo de ordenação com \textit{Bitonic Sort}} \caption*{Fonte:
+\caption*{Fonte:
 Adaptado de \citeonline{Mullapudi_2014}}
 \label{fig:bitonic_order}
 \end{figure}
@@ -385,9 +385,9 @@ atual para os \textit{Attributes} dos comparadores das etapas seguintes.
 
 \begin{figure}[!htb]
 \centering
+\caption{\textit{Rules} para comparador do \textit{Bitonic Sort} em PON}
 \includegraphics[width=0.9\textwidth]{../figures/rule_bitonic.png}
 \smallskip
-\caption{\textit{Rules} para comparador do \textit{Bitonic Sort} em PON}
 \caption*{Fonte: Autoria própria}
 \label{fig:rule_bitonic}
 \end{figure}
@@ -440,10 +440,10 @@ possível reduzir o número de \textit{Rules} pela metade, utilizando apenas uma
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.95 \textwidth]{../figures/nop_bitonic_old.png}
-\smallskip
 \caption{\textit{Rules} para implementação mais eficiente do comparador do
 \textit{Bitonic Sort} em PON}
+\includegraphics[width=0.95 \textwidth]{../figures/nop_bitonic_old.png}
+\smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:rule_bitonic_old}
 \end{figure}
@@ -517,17 +517,17 @@ Figuras \ref{fig:mem_bitonic} e \ref{fig:mem_bitonic_nop_old} respectivamente.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/mem_bitonic.png}
 \caption{Consumo de memória para a aplicação do algoritmo \textit{Bitonic Sort}
 com o \textit{Framework} PON C++ 4.0 na implementação original}
 \smallskip
+\includegraphics[width=\textwidth]{../figures/mem_bitonic.png}
 \caption*{Fonte: Autoria própria}
 \label{fig:mem_bitonic}
 \smallskip
-\includegraphics[width=\textwidth]{../figures/mem_bitonic_nop_old.png}
 \caption{Consumo de memória para a aplicação do algoritmo \textit{Bitonic Sort}
 com o \textit{Framework} PON C++ 4.0 na implementação em estágios}
 \smallskip
+\includegraphics[width=\textwidth]{../figures/mem_bitonic_nop_old.png}
 \caption*{Fonte: Autoria própria}
 \label{fig:mem_bitonic_nop_old}
 \end{figure}
@@ -673,10 +673,10 @@ equivalente a 8.33\% do processamento disponível.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cpu_bitonic.png}
-\smallskip
 \caption{Utilização de CPU durante execução do algoritmo \textit{Bitonic Sort}
 com o \textit{Framework} PON C++ 4.0 sequencial}
+\includegraphics[width=\textwidth]{../figures/cpu_bitonic.png}
+\smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:bit_cpu}
 \end{figure}
@@ -689,10 +689,10 @@ que a implementação sequencial.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cpu_bitonic_par.png}
-\smallskip
 \caption{Utilização de CPU durante execução do algoritmo \textit{Bitonic Sort}
 com o \textit{Framework} PON C++ 4.0 paralelizado}
+\includegraphics[width=\textwidth]{../figures/cpu_bitonic_par.png}
+\smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:bit_cpu_par}
 \end{figure}
@@ -720,9 +720,9 @@ temporais e estruturais, além de também permitir a paralelização da execuç�
 
 \begin{figure}[!htb]
   \centering
+  \caption{Árvores de decisão do algoritmo \textit{Random Forest}}
   \includegraphics[width=0.7\textwidth]{../figures/random_forest.png}
   \smallskip
-  \caption{Árvores de decisão do algoritmo \textit{Random Forest}}
   \caption*{Fonte: \citeonline{quali_pordeus_2020}}
   \label{fig:random_forest}
   \end{figure}
@@ -805,8 +805,6 @@ para a construção de cada versão do classificador com diferentes números de
 
 \begin{table}[!htb]
 \centering
-\caption{Número de elementos em relação ao número de árvores}
-\caption*{Fonte: Autoria própria}
 \label{tab:elementos_arvores}
 \smallskip
 \begin{tabularx}{0.8\textwidth}{|c|X|X|X|X|X|}
@@ -829,6 +827,8 @@ para a construção de cada versão do classificador com diferentes números de
 \textit{Methods} & 6 & 60 & 120 & 300 & 600 \\
 \hline
 \end{tabularx}
+\caption{Número de elementos em relação ao número de árvores}
+\caption*{Fonte: Autoria própria}
 \end{table}
 
 Esse elevado número de entidades e, por sua vez, de linhas de código faz com que
@@ -939,20 +939,20 @@ da  mesma, aumentando o tempo de execução total da aplicação.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cpu_rf.png}
-\smallskip
 \caption{Utilização de CPU durante execução do algoritmo \textit{Random Forest}
 com o \textit{Framework} PON C++ 4.0 sequencial}
+\includegraphics[width=\textwidth]{../figures/cpu_rf.png}
+\smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:rf_cpu}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cpu_rf_par.png}
-\smallskip
 \caption{Utilização de CPU durante execução do algoritmo \textit{Random Forest}
 com o \textit{Framework} PON C++ 4.0 paralelizado}
+\includegraphics[width=\textwidth]{../figures/cpu_rf_par.png}
+\smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:rf_cpu_par}
 \end{figure}
@@ -975,9 +975,9 @@ apresentada na Figura \ref{fig:cta_renaux}.
 
 \begin{figure}[!htb]
 \centering
+\caption{Ambiente de simulação}
 \includegraphics[width=0.72\textwidth]{../figures/semaforos_renaux.png}
 \smallskip
-\caption{Ambiente de simulação}
 \caption*{Fonte: \citeonline{renaux_2015}}
 \label{fig:cta_renaux}
 \end{figure}
@@ -995,9 +995,9 @@ disposição apresentada na Figura \ref{fig:cta_renaux}.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.75\textwidth]{../figures/estados_cta.png}
 \caption{Estados do CTA com estratégia independente}
 \smallskip
+\includegraphics[width=0.75\textwidth]{../figures/estados_cta.png}
 \caption*{Fonte: \citeonline{msc_negrini_2019}}
 \label{fig:estados_cta}
 \end{figure}
@@ -1013,9 +1013,9 @@ ilustrado na Figura \ref{fig:estados_cbcf}.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.85\textwidth]{../figures/estados_cbcf.png}
 \caption{Estados do CTA com estratégia CBCF}
 \smallskip
+\includegraphics[width=0.85\textwidth]{../figures/estados_cbcf.png}
 \caption*{Fonte: \citeonline{msc_negrini_2019}}
 \label{fig:estados_cbcf}
 \end{figure}
@@ -1128,20 +1128,20 @@ e CBCF.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cta_mem.png}
 \caption{Consumo de memória para a aplicação de semáforo com estratégia
 independente com o \textit{Framework} PON C++ 4.0}
 \smallskip
+\includegraphics[width=\textwidth]{../figures/cta_mem.png}
 \caption*{Fonte: Autoria própria}
 \label{fig:mem_cta}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cbcl_mem.png}
 \caption{Consumo de memória para a aplicação de semáforo com estratégia CBCF com
 o \textit{Framework} PON C++ 4.0}
 \smallskip
+\includegraphics[width=\textwidth]{../figures/cbcl_mem.png}
 \caption*{Fonte: Autoria própria}
 \label{fig:mem_cbcf}
 \end{figure}
@@ -1153,20 +1153,20 @@ entre cerca de 40\% e 70\% em ambos os cenários.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cta_cpu.png}
 \caption{Uso de CPU durante execução do Semáforo com estratégia independente com
 o \textit{Framework} PON C++ 4.0}
 \smallskip
+\includegraphics[width=\textwidth]{../figures/cta_cpu.png}
 \caption*{Fonte: Autoria própria}
 \label{fig:cpu_cta}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../figures/cbcl_cpu.png}
 \caption{Uso de CPU durante execução de semáforo com estratégia CBCF com o
 \textit{Framework} PON C++ 4.0}
 \smallskip
+\includegraphics[width=\textwidth]{../figures/cbcl_cpu.png}
 \caption*{Fonte: Autoria própria}
 \label{fig:cpu_cbcf}
 \end{figure}
@@ -1243,10 +1243,10 @@ trabalho. Como resultado, as funcionalidades do jogo foram mantidas.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../out/diagrams/class_diagram_nop4/NOP4Unreal.png}
-\smallskip
 \caption{Diagrama de classes do jogo desenvolvido com o \textit{Framework} PON
 C++ 4.0 }
+\includegraphics[width=\textwidth]{../out/diagrams/class_diagram_nop4/NOP4Unreal.png}
+\smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:jogo_fw4}
 \end{figure}
@@ -1268,8 +1268,6 @@ simplificou o código reduzindo o número de linhas de código totais.
 \begin{table}[!htb]
 \centering
 \caption{Linhas de código para a composição do jogo NOPUnreal}
-\caption*{Fonte: Autoria própria}
-\label{tab:linhas_de_codigo_nopunreal}
 \smallskip
 \begin{tabularx}{0.8\textwidth}{|X|X|}
 \hline
@@ -1282,6 +1280,8 @@ POO em C++ & 1407 \\
 \textit{Framework} PON C++ 4.0 & 1514 \\
 \hline
 \end{tabularx}
+\caption*{Fonte: Autoria própria}
+\label{tab:linhas_de_codigo_nopunreal}
 \end{table}
 
 \section{Pesquisa de opinião de desenvolvedores}\label{sec:opiniao}
@@ -1375,8 +1375,6 @@ em branco e comentários.
 \begin{table}[!htb]
 \centering
 \caption{Linhas de código para a composição do \textit{framework}}
-\caption*{Fonte: Autoria própria}
-\label{tab:linhas_de_codigo}
 \smallskip
 \begin{tabularx}{0.8\textwidth}{|X|X|}
 \hline
@@ -1387,6 +1385,8 @@ Versão & Linhas de código\\
 \textit{Framework} PON C++ 4.0 & 970 \\
 \hline
 \end{tabularx}
+\caption*{Fonte: Autoria própria}
+\label{tab:linhas_de_codigo}
 \end{table}
 
 A grande diferença no número de linhas de código se dá principalmente pela

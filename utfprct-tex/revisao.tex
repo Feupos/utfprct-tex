@@ -52,8 +52,8 @@ frequentemente materializado com o POO, enquanto a programação baseada em regr
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.75\textwidth]{../figures/paradimas_simao.png}
   \caption{Classificação dos paradigmas de programação com os paradigmas emergentes}
+  \includegraphics[width=0.75\textwidth]{../figures/paradimas_simao.png}
   \caption*{Fonte: Autoria própria}
   \label{fig:paradigmas_simao}
 \end{figure}
@@ -313,15 +313,14 @@ regras, conforme Figura \ref{fig:fact_base} \cite{msc_Banaszewski_2009}. Isto
 dito, alguns exemplos de linguagens que implementam o PL são  Oz
 \cite{van_roy_2004}, Prolog, RuleWorks e OPS \cite{msc_Banaszewski_2009}.
 
-\begin{figure}[!htb]
-\centering
-\subcaptionbox{Entidades}{\includegraphics[width=0.50\textwidth]{../figures/ab_pl.png}}%
-\hfill
-\subcaptionbox{Regra}{\includegraphics[width=0.50\textwidth]{../figures/rule_pl.png}}%
-\caption{Conhecimento representado em regras no PL}
-\caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
-\label{fig:rule_pl}
-\end{figure}
+%\begin{figure}[!htb]
+%\centering\caption{Conhecimento representado em regras no PL}
+%\subcaptionbox{Entidades}\includegraphics[width=0.50\textwidth]{../figures/ab_pl.png}}%
+%\hfill
+%\subcaptionbox{Regra}{\includegraphics[width=0.50\textwidth]{../figures/rule_pl.png}}%
+%\caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
+%\label{fig:rule_pl}
+%\end{figure}
 
 Ainda, há linguagens do PL, como OPS e Ilog Rules, que tem como base algoritmos
 de inferência otimizados como o RETE \cite{forgy_1982}. Outros exemplos de
@@ -335,8 +334,8 @@ regras em estrutura de dados \cite{doc_simao_2005,msc_Banaszewski_2009}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.6\textwidth]{../figures/fact_base.png}\smallskip
   \caption{Arquitetura interna de um Sistema Baseado em Regras}
+  \includegraphics[width=0.6\textwidth]{../figures/fact_base.png}\smallskip
   \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:fact_base}
 \end{figure}
@@ -359,8 +358,8 @@ conjunto de conflito
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.65\textwidth]{../figures/inference_machine.png}
   \caption{Estrutura do algoritmo RETE}
+  \includegraphics[width=0.65\textwidth]{../figures/inference_machine.png}
   \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:rete}
 \end{figure}
@@ -450,8 +449,8 @@ completamente separada da implementação \cite{crnkovic_2002}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{../figures/componentes.png}
   \caption{Diagrama de componentes}
+  \includegraphics[width=0.8\textwidth]{../figures/componentes.png}
   \caption*{Fonte: \citeonline{crnkovic_2002}}
   \label{fig:componentes}
 \end{figure}
@@ -539,8 +538,8 @@ com dados \cite{ferg_2006}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{../figures/eventos.png}
   \caption{Processo de detecção de eventos}
+  \includegraphics[width=\textwidth]{../figures/eventos.png}
   \caption*{Fonte: \citeonline{faison_2006}}
   \label{fig:eventos}
 \end{figure}
@@ -747,8 +746,6 @@ quando comparado ao PI.
   \centering
   \caption{Demandas de desenvolvimento de \textit{software} atendidas pelos
     Paradigmas Dominantes}
-  \caption*{Fonte: Autoria própria}
-  \label{tab:demandas2}
   \smallskip
   \begin{tabularx}{\textwidth}{|l||*{6}{X|}}\hline
     \diagbox{Demanda}{Paradigma} & Imperativo    & Declarativo    \\\hline\hline
@@ -756,6 +753,8 @@ quando comparado ao PI.
     Paralelismo                           &            & \checkmark \\ \hline
     Desempenho                            & \checkmark &            \\ \hline
   \end{tabularx}
+  \caption*{Fonte: Autoria própria}
+  \label{tab:demandas2}
 \end{table}
 
 De todo modo os Paradigmas Emergentes mencionados também não por herdarem muitas
@@ -829,9 +828,9 @@ geralmente alteram os estados dos Attributes, reativando o fluxo de notificaçõ
 
 \begin{figure}[!htb]
   \centering
+  \caption{Interação entre as entidades do PON e ciclo de notificações}
   \includegraphics[width=0.9\textwidth]{../figures/nop_cycle.png}
   \smallskip
-  \caption{Interação entre as entidades do PON e ciclo de notificações}
   \caption*{Fonte: Autoria Própria}
   \label{fig:oshiro_pon}
 \end{figure}
@@ -909,9 +908,9 @@ implicaria em uma complexidade linear $O(n)$ para o PON
 
 \begin{figure}[!htb]
   \centering
+  \caption{Cálculo assintótico do mecanismo de notificações}
   \includegraphics[width=0.8\textwidth]{../figures/calculo_pon.png}
   \smallskip
-  \caption{Cálculo assintótico do mecanismo de notificações}
   \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:calculo_pon}
 \end{figure}
@@ -952,9 +951,9 @@ as notificações realizadas \cite{msc_Banaszewski_2009}.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Notificações baseadas em lista encadeada e tabela \textit{hash}}
   \includegraphics[width=\textwidth]{../figures/hash_not.png}
   \smallskip
-  \caption{Notificações baseadas em lista encadeada e tabela \textit{hash}}
   \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:hash_not}
 \end{figure}
@@ -982,9 +981,9 @@ que a cadeia de notificações seja animada com uma dada cadência
 
 \begin{figure}[!htb]
   \centering
+  \caption{Diagrama de atividades do processo de renotificação}
   \includegraphics[width=0.4\textwidth]{../out/diagrams/renotification/renotif.png}
   \smallskip
-  \caption{Diagrama de atividades do processo de renotificação}
   \caption*{Fonte: Autoria própria}
   \label{fig:renotif_activity}
 \end{figure}
@@ -1002,9 +1001,9 @@ modo se torna necessário que a cada nova atribuição de valor para
 
 \begin{figure}[!htb]
   \centering
+  \caption{\textit{Rule} que depende do mecanismo de renotificações}
   \includegraphics[width=0.6\textwidth]{../out/diagrams/rule_renotif/rules_renotif.png}
   \smallskip
-  \caption{\textit{Rule} que depende do mecanismo de renotificações}
   \caption*{Fonte: Autoria própria}
   \label{fig:ex_rule_renotif}
 \end{figure}
@@ -1065,9 +1064,9 @@ maioria.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Alterações de estado com \textit{Attribute} impertinente ativo}
   \includegraphics[width=0.55\textwidth]{../figures/pr_imp_1.png}
   \smallskip
-  \caption{Alterações de estado com \textit{Attribute} impertinente ativo}
   \caption*{Fonte: \citeonline{msc_Ronszcka_2012}}
   \label{fig:pr_imp_1}
 \end{figure}
@@ -1086,9 +1085,9 @@ desabilitadas.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Alterações de estado com \textit{Attribute} impertinente desativado}
   \includegraphics[width=0.55\textwidth]{../figures/pr_imp_2.png}
   \smallskip
-  \caption{Alterações de estado com \textit{Attribute} impertinente desativado}
   \caption*{Fonte: \citeonline{msc_Ronszcka_2012}}
   \label{fig:pr_imp_2}
 \end{figure}
@@ -1108,10 +1107,10 @@ até que fosse requisitado novamente pela \textit{Condition}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.55\textwidth]{../figures/pr_imp_3.png}
-  \smallskip
   \caption{Alterações de estado com \textit{Attribute} impertinente reativado}
-    \caption*{Fonte: \citeonline{msc_Ronszcka_2012}}
+    \includegraphics[width=0.55\textwidth]{../figures/pr_imp_3.png}
+  \smallskip
+  \caption*{Fonte: \citeonline{msc_Ronszcka_2012}}
   \label{fig:pr_imp_3}
 \end{figure}
 
@@ -1154,9 +1153,9 @@ expressões causais \cite{msc_Banaszewski_2009}.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Declaração de \textit{Premises} do exemplo do alarme}
   \includegraphics[width=0.45\textwidth]{../out/diagrams/shared_premises/premises.png}
   \smallskip
-  \caption{Declaração de \textit{Premises} do exemplo do alarme}
   \caption*{Fonte: Autoria própria}
   \label{fig:premises_shared_ex}
 \end{figure}
@@ -1174,10 +1173,10 @@ questão quando pertinente.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{../out/diagrams/rules_example/rules.png}
-  \smallskip
   \caption{Declaração de \textit{Rules} utilizando \textit{Premises}
     compartilhadas}
+  \includegraphics[width=0.8\textwidth]{../out/diagrams/rules_example/rules.png}
+  \smallskip
   \caption*{Fonte: Autoria própria}
   \label{fig:rules_shared_ex}
 \end{figure}
@@ -1232,10 +1231,10 @@ resolução de conflitos para ambientes monoprocessados são listadas abaixo:
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.7\textwidth]{../figures/conflitos.png}
-  \smallskip
   \caption{Modelo centralizado de resolução de conflitos na estratégia
-    \textit{Breadth}} \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
+    \textit{Breadth}} \includegraphics[width=0.7\textwidth]{../figures/conflitos.png}
+  \smallskip
+  \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:conflitos}
 \end{figure}
 
@@ -1290,9 +1289,9 @@ também ser aprovada.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Exemplo de aplicação de \textit{Master Rule}}
   \includegraphics[width=0.8\textwidth]{../out/diagrams/master_rule/rules.png}
   \smallskip
-  \caption{Exemplo de aplicação de \textit{Master Rule}}
   \caption*{Fonte: Autoria própria}
   \label{fig:master_rule}
 \end{figure}
@@ -1335,9 +1334,9 @@ sinal esteja no estado verde e não hajam pessoas andando no cruzamento.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Representação de uma \textit{Formation Rule}}
   \includegraphics[width=0.7\textwidth]{../figures/formation_rule.png}
   \smallskip
-  \caption{Representação de uma \textit{Formation Rule}}
   \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:formation_rule}
 \end{figure}
@@ -1376,9 +1375,9 @@ alarme. A Figura \ref{fig:fbe_rule} ilustra este cenário.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Exemplo de aplicação de \textit{FBE Rules}}
   \includegraphics[width=0.8\textwidth]{../out/diagrams/fbe_rule/rules.png}
   \smallskip
-  \caption{Exemplo de aplicação de \textit{FBE Rules}}
   \caption*{Fonte: Autoria própria}
   \label{fig:fbe_rule}
 \end{figure}
@@ -1421,8 +1420,6 @@ esses conceitos.
 \begin{table}[!htb]
 \centering
 \caption{Resumo de conceitos de programação do PON}
-\caption*{Fonte: Autoria própria}
-\label{tab:resumo_conceitos}
 \begin{tabularx}{\textwidth}{l|X}
 Conceito                              & Definição                                                                                                                                  \\ \hline\hline
 Reatividade das entidades             & Entidades são capazes de gerar notificações pontuais de forma espontânea na alteração de estado                                            \\ \hline
@@ -1435,6 +1432,8 @@ Compartilhamento de entidades         & Utillização compartilhada de entidades
 \textit{FBE Rules}                    & Definição de \textit{Rules} no corpo do \textit{FBE}, instanciando uma \textit{Rule} independente para cada instância de dado \textit{FBE} \\ \hline
 Agregação entre \textit{FBEs}         & Criação de \textit{FBEs} compostos de outros \textit{FBEs}                                                                                 \\ \hline
 \end{tabularx}
+\caption*{Fonte: Autoria própria}
+\label{tab:resumo_conceitos}
 \end{table}
 
 \clearpage
@@ -1499,7 +1498,6 @@ no Código \ref{cod:mira_alvo_fbe}.
 \noindent
 \begin{minipage}{.45\textwidth}
   \centering
-  \includegraphics[width=.8\textwidth]{../figures/mira_alvo.png}
   \captionof{figure}{Cenário do Mira ao Alvo}
   \captionof{figure}*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:mira_alvo}
@@ -1604,7 +1602,8 @@ instanciação de uma aplicação em PON, usando as entidades do pacote
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=0.85\textwidth]{../figures/fw1_structure.png}
-  \caption{Estrutura do \textit{framework} C++ 1.0} \caption*{Fonte:
+  \caption{Estrutura do \textit{framework} C++ 1.0} \includegraphics[width=.8\textwidth]{../figures/mira_alvo.png}
+  \caption*{Fonte:
     \citeonline{msc_Banaszewski_2009}}
   \label{fig:fw_pkg}
 \end{figure}
@@ -1669,9 +1668,9 @@ se refere ao \textit{framework} C++ Prototipal e \enquote{Versão Nova} se refer
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{../figures/fw1_vs_prot.png}
   \caption{Comparação do desempenho do \textit{framework} C++ 1.0 com o
-  \textit{framework} C++ Prototipal} \caption*{Fonte:
+  \textit{framework} C++ Prototipal} \includegraphics[width=\textwidth]{../figures/fw1_vs_prot.png}
+  \caption*{Fonte:
   \citeonline{msc_Banaszewski_2009}}
   \label{fig:fw1_vs_prot}
 \end{figure}
@@ -1692,8 +1691,8 @@ do PON em \textit{software} \cite{doc_ronszcka_2019}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.9\textwidth]{../figures/fw2_structure.png}
-  \caption{Estrutura do \textit{framework} C++ 2.0} \caption*{Fonte:
+  \caption{Estrutura do \textit{framework} C++ 2.0} \includegraphics[width=0.9\textwidth]{../figures/fw2_structure.png}
+  \caption*{Fonte:
     \citeonline{msc_valenca_2012}}
   \label{fig:fw2_struct}
 \end{figure}
@@ -1717,8 +1716,8 @@ programa em PON que passa então por um processo de geração de código para o
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.9\textwidth]{../figures/wizard.png}
-  \caption{\textit{Wizard} PON} \caption*{Fonte: \citeonline{msc_valenca_2012}}
+  \caption{\textit{Wizard} PON} \includegraphics[width=.9\textwidth]{../figures/wizard.png}
+  \caption*{Fonte: \citeonline{msc_valenca_2012}}
   \label{fig:wizard}
 \end{figure}
 
@@ -1772,9 +1771,9 @@ desempenho de cerca três vezes, conforme observado na Figura
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{../figures/fw2_vs_fw1.png}
   \caption{Comparação do desempenho do \textit{Framework} PON C++ 2.0 com o
   \textit{Framework} PON C++ 1.0}
+  \includegraphics[width=0.8\textwidth]{../figures/fw2_vs_fw1.png}
   \caption*{Fonte: \citeonline{msc_valenca_2012}}
   \label{fig:fw2_vs_fw1}
 \end{figure}
@@ -1836,8 +1835,8 @@ para controlar o acesso e a execução de entidades compartilhadas entre as
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.65\textwidth]{../figures/fw_30.png}
-  \caption{Estrutura do \textit{framework} C++ 3.0} \caption*{Fonte:
+  \caption{Estrutura do \textit{framework} C++ 3.0} \includegraphics[width=.65\textwidth]{../figures/fw_30.png}
+  \caption*{Fonte:
     \citeonline{schutz_2018}}
   \label{fig:fw3_struct}
 \end{figure}
@@ -1866,9 +1865,9 @@ o \textit{CoreController}, quebrando assim esse ciclo de execução indefinido.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.55\textwidth]{../figures/fw30_flow.png}
   \caption{Diagrama de atividades do controle de entidades do \textit{framework}
     C++ 3.0}
+  \includegraphics[width=.55\textwidth]{../figures/fw30_flow.png}
   \caption*{Fonte: \citeonline{schutz_2018}}
   \label{fig:fw3_flow}
 \end{figure}
@@ -1886,8 +1885,8 @@ carga de trabalho em si por meio da realocação das entidades da aplicação
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{../figures/lobenoi.png}
-  \caption{Visão geral do método \textit{LobeNOI}} \caption*{Fonte:
+  \caption{Visão geral do método \textit{LobeNOI}} \includegraphics[width=\textwidth]{../figures/lobenoi.png}
+  \caption*{Fonte:
   \citeonline{belmonte_2016}}
   \label{fig:lobenoi}
 \end{figure}
@@ -1907,8 +1906,8 @@ neural, bem como a classe de controle da rede neural em si como uma
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.6\textwidth]{../figures/neuropon_struct.png}
   \caption{Estrutura do NeuroPON}
+  \includegraphics[width=.6\textwidth]{../figures/neuropon_struct.png}
   \caption*{Fonte: \citeonline{schutz_2018}}
   \label{fig:neuro_struct}
 \end{figure}
@@ -1948,8 +1947,8 @@ aumenta o número de núcleos utilizados, maior o tempo de execução
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.65\textwidth]{../figures/core_usage_cpp3.png}
   \caption{Taxa de utilização dos núcleos da CPU no treinamento de RNA MLP com método BP}
+  \includegraphics[width=.65\textwidth]{../figures/core_usage_cpp3.png}
   \caption*{Fonte: \citeonline{schutz_2018}}
   \label{fig:core_usage_cpp3}
 \end{figure}
@@ -1964,8 +1963,8 @@ subsequentemente neste trabalho e se encontram na dissertação de mestrado de
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.55\textwidth]{../figures/pon_multi_fix.png}
   \caption{Tempos de execução (em milissegundos) do treinamento de ANN MLP com método BP}
+  \includegraphics[width=.55\textwidth]{../figures/pon_multi_fix.png}
   \caption*{Fonte: \citeonline{schutz_2018}}
   \label{fig:pon_multi}
 \end{figure}
@@ -1995,8 +1994,8 @@ incluindo melhorias principalmente observadas pela utilização de
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.7\textwidth]{../figures/junoc_class.png}
   \caption{Diagrama de classes do JuNOC++}
+  \includegraphics[width=.7\textwidth]{../figures/junoc_class.png}
   \caption*{Fonte: \citeonline{chierichi_2020}}
   \label{fig:class_junoc}
 \end{figure}
@@ -2089,8 +2088,8 @@ real da sua versão final, que apresenta desempenho superior ao
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.85\textwidth]{../figures/junoc_graph.png}
   \caption{Gráfico dos restultados de experimento com o JuNOC++}
+  \includegraphics[width=.85\textwidth]{../figures/junoc_graph.png}
   \caption*{Fonte: \citeonline{chierichi_2020}}
   \label{fig:exp_junoc}
 \end{figure}
@@ -2154,9 +2153,9 @@ PON C++ 2.0 conforme o que definido em \citeonline{msc_Ronszcka_2012} e
 
 \begin{figure}[!htb]
   \centering
+  \caption{Tela principal do ambiente de simulação do futebol de robôs}
   \includegraphics[width=0.95\textwidth]{../figures/futebol_robos.png}
   \smallskip
-  \caption{Tela principal do ambiente de simulação do futebol de robôs}
   \caption*{Fonte: \citeonline{lima_2020}}
   \label{fig:futebol_robos}
 \end{figure}
@@ -2174,9 +2173,9 @@ registro na dissertação.
 
 \begin{figure}[!htb]
     \centering
+    \caption{Diagrama de classes do futebol de robôs}
     \includegraphics[width=0.7\textwidth]{../figures/class_futebol.png}
     \smallskip
-    \caption{Diagrama de classes do futebol de robôs}
     \caption*{Fonte: \citeonline{lima_2020}}
     \label{fig:class_futebol}
 \end{figure}
@@ -2228,9 +2227,9 @@ amarelas.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{../figures/game.png}
+  \caption{\textit{Screenshot} do jogo desenvolvido} \includegraphics[width=\textwidth]{../figures/game.png}
   \smallskip
-  \caption{\textit{Screenshot} do jogo desenvolvido} \caption*{Fonte:
+  \caption*{Fonte:
       \citeonline{neves_2020}}
   \label{fig:jogo_fw2}
 \end{figure}
@@ -2276,9 +2275,9 @@ muitos tipos próprios, como estruturas, enumerações e classes (\textit{e.g.}
 
 \begin{figure}[!htb]
   \centering
+  \caption{Diagrama de classes do jogo desenvolvido}
   \includegraphics[width=\textwidth]{../out/diagrams/class_diagram_nop/NOPUnreal.png}
   \smallskip
-  \caption{Diagrama de classes do jogo desenvolvido}
   \caption*{Fonte: \citeonline{neves_2020}}
   \label{fig:class_jogo_fw2}
 \end{figure}
@@ -2453,8 +2452,8 @@ ficariam esses desempenhos, inclusive em relação ao \textit{Framework} PON C++
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.5\textwidth]{../figures/comp_henzen.png}
   \caption{Comparação de desempenho das aplicações em C++, Java e C\#}
+  \includegraphics[width=.5\textwidth]{../figures/comp_henzen.png}
   \caption*{Fonte: \citeonline{henzen_2015}}
   \label{fig:comp_henzen}
 \end{figure}
@@ -2488,8 +2487,8 @@ distribuído, como a classes \textit{SensorFBE} e \textit{NotificationNetwork}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=\textwidth]{../figures/classes_pon_iot.png}
   \caption{Diagrama simplificado de classes do \textit{Framework} PON C\# IoT}
+  \includegraphics[width=\textwidth]{../figures/classes_pon_iot.png}
   \caption*{Fonte: \citeonline{msc_oliveira_2019}}
   \label{fig:classes_pon_iot}
 \end{figure}
@@ -2523,8 +2522,8 @@ físico utilizando o \textit{Framework} PON C\# IoT.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.9\textwidth]{../figures/pon_iot_flow.png}
   \caption{Diagrama de atividades do PON C\# IoT}
+  \includegraphics[width=0.9\textwidth]{../figures/pon_iot_flow.png}
   \caption*{Fonte: \citeonline{msc_oliveira_2019}}
   \label{fig:ativ_pon_iot}
 \end{figure}
@@ -2550,8 +2549,8 @@ com outros dispositivos \cite{msc_oliveira_2019}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.55\textwidth]{../figures/pon_iot.png}
   \caption{Diagrama de componentes PON C\# IoT}
+  \includegraphics[width=.55\textwidth]{../figures/pon_iot.png}
   \caption*{Fonte: \citeonline{msc_oliveira_2019}}
   \label{fig:pon_iot}
 \end{figure}
@@ -2606,8 +2605,8 @@ processar por segundo.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.75\textwidth]{../figures/teste_pon_iot.png}
   \caption{Resultados de testes do PON C\# IoT}
+  \includegraphics[width=.75\textwidth]{../figures/teste_pon_iot.png}
   \caption*{Fonte: \citeonline{msc_oliveira_2019}}
   \label{fig:teste_pon_iot}
 \end{figure}
@@ -2641,9 +2640,9 @@ apresentada na Figura \ref{fig:pon_elixir_uml}.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Modelagem UML dos elementos do PON enquanto mircro-atores}
   \includegraphics[width=0.9\textwidth]{../figures/pon_elixir_uml.png}
   \smallskip
-  \caption{Modelagem UML dos elementos do PON enquanto mircro-atores}
   \caption*{Fonte: \citeonline{msc_negrini_2019}}
   \label{fig:pon_elixir_uml}
 \end{figure}
@@ -2728,10 +2727,10 @@ com 2, 4, 8 e 16 núcleos. Esses ambientes são identificados na Figura
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.65\textwidth]{../figures/maquinas_elixir.png}
-  \smallskip
   \caption{Detalhamento dos ambientes do experimento do \textit{Framework} PON
-    Elixir/Erlang} \caption*{Fonte: \citeonline{msc_negrini_2019}}
+    Elixir/Erlang} \includegraphics[width=0.65\textwidth]{../figures/maquinas_elixir.png}
+  \smallskip
+  \caption*{Fonte: \citeonline{msc_negrini_2019}}
   \label{fig:ambientes_elixir}
 \end{figure}
 
@@ -2748,8 +2747,6 @@ distribuída com um bom nível de balanceamento entre os núcleos
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../figures/vm02.png}
-    \smallskip
     \captionof{figure}{Taxa média de ocupação por núcleo em ambiente VM02}
     \captionof{figure}*{Fonte: \citeonline{msc_negrini_2019}}
     \label{fig:vm02}
@@ -2801,7 +2798,9 @@ core}.
   \includegraphics[width=0.8\textwidth]{../figures/neuropon_elixir.png}
   \smallskip
   \caption{Tempos médios de execução NeuroPON de uma RNA MLP para a função XOR
-  no \textit{Framework} PON Elixir/Erlang} \caption*{Fonte:
+  no \textit{Framework} PON Elixir/Erlang} \includegraphics[width=\linewidth]{../figures/vm02.png}
+    \smallskip
+    \caption*{Fonte:
   \citeonline{doc_Schutz_2019}}
   \label{fig:neuropon_elixir}
 \end{figure}
@@ -2830,9 +2829,9 @@ atores são acessíveis por seu endereço, mesmo em sistemas distribuídos
 
 \begin{figure}[!htb]
   \centering
+  \caption{Estrutura de atores em Akka.NET}
   \includegraphics[width=0.8\textwidth]{../figures/atores_akka.png}
   \smallskip
-  \caption{Estrutura de atores em Akka.NET}
   \caption*{Fonte: \citeonline{martini_2019}}
   \label{fig:akka_actor}
 \end{figure}
@@ -2847,9 +2846,9 @@ O diagrama do modelo de atores para esta aplicação é mostrado na Figura
 
 \begin{figure}[!htb]
   \centering
+  \caption{Modelo de atores na aplicação do portão eletrônico em Akka.NET}
   \includegraphics[width=0.8\textwidth]{../figures/akka_actor.png}
   \smallskip
-  \caption{Modelo de atores na aplicação do portão eletrônico em Akka.NET}
   \caption*{Fonte: \citeonline{martini_2019}}
   \label{fig:akka_portao}
 \end{figure}
@@ -2917,9 +2916,9 @@ resultados melhores \cite{martini_2019}.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Comparação entre o \textit{Framework} PON Akka.NET e C++ 3.0}
   \includegraphics[width=0.8\textwidth]{../figures/result_akka.png}
   \smallskip
-  \caption{Comparação entre o \textit{Framework} PON Akka.NET e C++ 3.0}
   \caption*{Fonte: \citeonline{martini_2019}}
   \label{fig:result_akka}
 \end{figure}
@@ -2951,8 +2950,6 @@ cada uma das materializações do PON, do mesmo modo que a Tabela
 \begin{table}[!htb]
   \centering
   \caption{Propriedades elementares contempladas nas materializações do PON}
-  \caption*{Fonte: Autoria própria}
-  \label{tab:elementares}
   \smallskip
   \begin{threeparttable}
     \begin{tabularx}{\textwidth}{|l||*{8}{X|}}\hline
@@ -2971,6 +2968,8 @@ cada uma das materializações do PON, do mesmo modo que a Tabela
       entretanto carece de testes para validação
     \end{tablenotes}
   \end{threeparttable}
+  \caption*{Fonte: Autoria própria}
+  \label{tab:elementares}
 \end{table}
 
 Pode ser dito que nenhuma das materializações atinge de forma plena o quesito de
@@ -3026,8 +3025,6 @@ introduzidos justamente nos trabalhos que fizeram o desenvolvimento do
 \begin{table}[!htb]
   \centering
   \caption{Conceitos do PON contemplados nas materializações do paradigma}
-  \caption*{Fonte: Autoria própria}
-  \label{tab:conceitos}
   \smallskip
 \begin{threeparttable}
   \begin{tabularx}{\textwidth}{|l||*{8}{X|}}\hline
@@ -3065,6 +3062,8 @@ introduzidos justamente nos trabalhos que fizeram o desenvolvimento do
     \textit{Rules} do PON \cite{muchalski_2012}
   \end{tablenotes}
 \end{threeparttable}
+\caption*{Fonte: Autoria própria}
+\label{tab:conceitos}
 \end{table}
 
 \begin{comment}
@@ -3335,9 +3334,9 @@ processo de compilação, usando o Grafo PON. Nesse âmbito, a Figura
 
 \begin{figure}[!htb]
   \centering
+  \caption{Método MCPON}
   \includegraphics[width=0.8\textwidth]{../figures/metodo_mcpon.png}
   \smallskip
-  \caption{Método MCPON}
   \caption*{Fonte: \citeonline{doc_ronszcka_2019}}
   \label{fig:mcpon}
 \end{figure}
@@ -3360,9 +3359,9 @@ na estrutura do Grafo PON \cite{msc_negrini_2019}.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Estrutura do Grafo PON}
   \includegraphics[width=\textwidth]{../figures/grafo_pon_negrini.png}
   \smallskip
-  \caption{Estrutura do Grafo PON}
   \caption*{Fonte: \citeonline{msc_negrini_2019}}
   \label{fig:grafo_pon}
 \end{figure}
@@ -3376,9 +3375,9 @@ específico em linguagens como C e C++.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Sistema de compilação do PON}
   \includegraphics[width=0.8\textwidth]{../figures/sistema_compilacao.png}
   \smallskip
-  \caption{Sistema de compilação do PON}
   \caption*{Fonte: \citeonline{doc_ronszcka_2019}}
   \label{fig:sistema_compilacao}
 \end{figure}
@@ -3477,9 +3476,9 @@ para esta \textit{Premise}, conforme apresentados na Tabela \ref{tab:test_case}
 
 \begin{figure}[!htb]
   \centering
+  \caption{Classes de equivalência e análise de valores limite}
   \includegraphics[width=0.7\textwidth]{../figures/classes_equivalencia.png}
   \smallskip
-  \caption{Classes de equivalência e análise de valores limite}
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:classe_equivalencia}
 \end{figure}
@@ -3487,9 +3486,7 @@ para esta \textit{Premise}, conforme apresentados na Tabela \ref{tab:test_case}
 
 \begin{table}[!htb]
   \centering
-  \caption{Caso de teste prara \textit{Premise}} \caption*{Fonte: Adaptado de
-    \citeonline{msc_Kossoski_2015}}
-  \label{tab:test_case}
+  \caption{Caso de teste prara \textit{Premise}} 
   \smallskip
   \begin{tabularx}{\textwidth}{|l|*{6}{X|}}\hline
     Caso de teste & Valor de \textit{atTest} & \makecell{Saída esperada ou\\ comportamento esperado}    \\\hline
@@ -3497,7 +3494,9 @@ para esta \textit{Premise}, conforme apresentados na Tabela \ref{tab:test_case}
     2 & 800 & Aprova a \textit{Premise} \\ \hline
     3 & 801 & Não aprova a \textit{Premise} \\ \hline
     4 & 802 & Não aprova a \textit{Premise} \\ \hline
-  \end{tabularx}
+  \end{tabularx}\caption*{Fonte: Adaptado de
+  \citeonline{msc_Kossoski_2015}}
+\label{tab:test_case}
 \end{table}
 
 \FloatBarrier
@@ -3512,9 +3511,9 @@ dos casos de teste e análise dos resultados dos testes unitários
 
 \begin{figure}[!htb]
   \centering
+  \caption{Fase de testes unitários do PON}
   \includegraphics[width=0.9\textwidth]{../figures/unit_pon.png}
   \smallskip
-  \caption{Fase de testes unitários do PON}
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:unit_pon}
 \end{figure}
@@ -3544,9 +3543,9 @@ fluxos alternativos de eventos em um caso de uso.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Fluxo básico e fluxos alternativos de eventos em um caso de uso}
   \includegraphics[width=0.6\textwidth]{../figures/use_cases.png}
   \smallskip
-  \caption{Fluxo básico e fluxos alternativos de eventos em um caso de uso}
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:use_cases}
 \end{figure}
@@ -3565,9 +3564,9 @@ dos casos de teste e análise dos resultados dos testes de integração
 
 \begin{figure}[!htb]
   \centering
+  \caption{Fase de testes de integração do PON}
   \includegraphics[width=\textwidth]{../figures/int_pon.png}
   \smallskip
-  \caption{Fase de testes de integração do PON}
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:int_pon}
 \end{figure}
@@ -3691,9 +3690,9 @@ das funcionalidades que são adicionadas a cada versão.
 
 \begin{figure}[!htb]
   \centering
+  \caption{Número de páginas nas diferentes versões do padrão ISO C++}
   \includegraphics[width=0.8\textwidth]{../figures/iso_cpp.png}
   \smallskip
-  \caption{Número de páginas nas diferentes versões do padrão ISO C++}
   \caption*{Fonte: \citeonline{feldman_2019}}
   \label{fig:iso_cpp}
 \end{figure}
@@ -4525,8 +4524,8 @@ exemplificado na Figura \ref{fig:google_bench_result}, na qual são apresentadas
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=.8\textwidth]{../figures/google_bench_result.png}
   \caption{Resultado de teste com Google Benchmark}
+  \includegraphics[width=.8\textwidth]{../figures/google_bench_result.png}
   \caption*{Fonte: \citeonline{google_test_primer}}
   \label{fig:google_bench_result}
 \end{figure}
