@@ -1014,12 +1014,12 @@ OUTPUT utfprct.mw
 INPUT ../figures/fw2_mem.PNG
 INPUT ../figures/fw2_mem.PNG
 INPUT ../figures/fw2_mem.PNG
-INPUT ../figures/fw4_mem.PNG
-INPUT ../figures/fw4_mem.PNG
-INPUT ../figures/fw4_mem.PNG
 OUTPUT utfprct.mw
 INPUT utfprct.mw
 OUTPUT utfprct.mw
+INPUT ../figures/fw4_mem.PNG
+INPUT ../figures/fw4_mem.PNG
+INPUT ../figures/fw4_mem.PNG
 OUTPUT utfprct.mw
 INPUT utfprct.mw
 OUTPUT utfprct.mw
