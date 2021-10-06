@@ -41,7 +41,7 @@
 %\caption{Exemplo de caption}%% Legenda
 %\label{fig:figura1}%% Rótulo
 %\includegraphics[width=\textwidth]{./CapituloExemplo/figura1}%% Dimensões e localização
-%\fonte{\citet{Larsson2003}.}%% Fonte (quando criado pelo autor, usar Autoria Própria)
+%\caption*{Fonte: \citet{Larsson2003}.}%% Fonte (quando criado pelo autor, usar Autoria Própria)
 %\end{figure}
 
 %% Classe e opções de documento
@@ -229,8 +229,11 @@
 
 \captionsetup{justification=centering,singlelinecheck=false,format=hang,skip=-1pt,font={footnotesize,bf},labelfont=bf}
 
-%\begin{comment}
+\begin{comment}
 \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+\newlistentry{listing}{lol}{0}%% Entrada da lista de objetos flutuantes (algoritmo)
+\newfloat{listing}{lol}{\listingname}%% Objeto flutuante (algoritmo)
+\setfloatadjustment{listing}{\centering}%% Ajuste do objeto flutuante (algoritmo)
 
 \let\oldlstlistoflistings\lstlistoflistings \renewcommand{\lstlistoflistings}{%
  \begingroup%
@@ -240,9 +243,21 @@
  \endgroup}
 \renewcommand{\lstlistingname}{Código}
 \renewcommand{\lstlistlistingname}{Lista de Códigos}
-%\end{comment}
+\end{comment}
+
+\let\oldlistoflistings\listoflistings \renewcommand{\listoflistings}{%
+ \begingroup%
+ \let\oldnumberline\numberline%
+ \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
+ \oldlistoflistings*%
+ \endgroup}
+ 
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
 
 \lstset{
+ numberbychapter=false,
+ %belowskip={1.3\baselineskip},
  numbers=left,
  stepnumber=1,
  language=C++,
@@ -394,9 +409,9 @@
     \orig@lst@MakeCaption#1%
     \ifx b#1%
         \ifx\lst@source\@empty\else
-            \noindent
+            \noindent\vskip\belowcaptionskip
             \expandafter\lst@makesourcebox\expandafter{\lst@source}%
-            %\vskip\belowcaptionskip
+            \vskip\belowcaptionskip
         \fi
     \fi
 }
@@ -551,14 +566,15 @@
 %%
 %\incluirlistadealgoritmos%% Comente para remover este item
 
-%\pdfbookmark[0]{\lstlistlistingname}{loc}%% Marcador
+%\pdfbookmark[0]{\lstlistlistingname}{loa}%% Marcador
+%\renewcommand*{\cftfigaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (algoritmo)
+%\renewcommand{\afterloltitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (algoritmo)
+%\setfloatadjustment{lstlisting}{\centering}%% Ajuste do objeto flutuante (algoritmo)
 %\begin{Spacing}{1.0}%% Espaçamento simples entre linhas
-%  \lstlistoflistings*%% Impressão da lista de algoritmos
-%
+%  \lstlistoflistings%% Impressão da lista de algoritmos
 %\end{Spacing}
-
-
-%\cleardoublepage
+%\cleardoublepage%% Página de verso
+\incluirlistadecodigos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -594,9 +610,43 @@
 %%  2) Controle da ordem de apresentação das listas
 %%  3) Não é preciso referenciar no texto
 %%
-\incluirlistadeacronimos{glossaries}%% Opções: "glossaries" (pacote) ou "file" (arquivo) ou "none" (desabilita)
+%\incluirlistadeacronimos{glossaries}%% Opções: "glossaries" (pacote) ou "file" (arquivo) ou "none" (desabilita)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{LISTA DE ABREVIATURAS, SIGLAS E ACRÔNIMOS}
 
+\begin{table}[h!]
+\begin{tabularx}{\textwidth}{l|X|X}
+Sigla   & Original                                                                  & Tradução                                           \\ \hline
+UTFPR   & Universidade Tecnológica Federal do Paraná                                &                                                    \\ \hline
+PPGCA   & Programa de Pós-Graduação em Computação Aplicada                          &                                                    \\ \hline
+CPGEI   & Programa de Pós-Graduação em Engenharia Elétrica e Informática Industrial &                                                    \\ \hline
+PON     & Paradigma Orientado a Notificações                                        &                                                    \\ \hline
+TDD     & \textit{Test Driven Development}                                          & Desenvolvimento Orientado a Testes                 \\ \hline
+STL     & \textit{Standard Template Library}                                        & Biblioteca Template Padrão                         \\ \hline
+LingPON & Linguagem do PON                                                          &                                                    \\ \hline
+PON-HD  & PON em \textit{Hardware} Digital                                          &                                                    \\ \hline
+NOCA    & \textit{Notification Oriented Computer Architecture}                      & Arquitetura de Computação Orientada a Notificações \\ \hline
+POO     & Paradigma Orientado a Objetos                                             &                                                    \\ \hline
+PI      & Paradigma Imperativo                                                      &                                                    \\ \hline
+PD      & Paradigma Declarativo                                                     &                                                    \\ \hline
+PF      & Paradigma Funcional                                                       &                                                    \\ \hline
+PP      & Paradigma Procedimental                                                   &                                                    \\ \hline
+PL      & Paradigma Lógico                                                          &                                                    \\ \hline
+POE     & Paradigma Orientado a Eventos                                             &                                                    \\ \hline
+POAt    & Paradigma Orientado a Atores                                              &                                                    \\ \hline
+POAg    & Paradigma Orientado a Agentes                                             &                                                    \\ \hline
+POC     & Paradigma Orientado a Componentes                                         &                                                    \\ \hline
+SBR     & Sistema Baseado em Regras                                                 &                                                    \\ \hline
+CON     & Controle Orientado a Notificações                                         &                                                    \\ \hline
+API     & \textit{Application Programming Interface}                                & Interface de Programação de Aplicativos            \\ \hline
+SBR     & Sistema Baseado em Regras                                                 &                                                    \\ \hline
+RNA     & Rede Neural Artificial                                                    &                                                    \\ \hline
+BP      & \textit{Backpropagation}                                                  & Retropropagação                                    \\ \hline
+MLP     & \textit{Multi Layer Perception}                                           & Percepção Multicamadas                             \\ \hline
+CBCF    & Controle Baseado em Congestionamento Facilitado                           &                                                   
+\end{tabularx}
+\end{table}
+\cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de símbolos
@@ -610,7 +660,7 @@
 %%  2) Liberdade na organização das seções das listas
 %%  3) Controle da ordem de apresentação dentro das listas
 %%
-\incluirlistadesimbolos{nomencl}%% Opções: "nomencl" (pacote) ou "file" (arquivo) ou "none" (desabilita)
+%\incluirlistadesimbolos{nomencl}%% Opções: "nomencl" (pacote) ou "file" (arquivo) ou "none" (desabilita)
 
 %% Pretexto da lista de símbolos (opção pacote nomencl)
 %\renewcommand{\nompreamble}{Nomenclature...}
@@ -629,11 +679,11 @@
 %%
 \textual%% Não comente esta linha
 
-\include{introducao}
-\include{revisao}
-\include{desenvolvimento}
+%\include{introducao}
+%\include{revisao}
+%\include{desenvolvimento}
 \include{resultados}
-\include{conclusao}
+%\include{conclusao}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -686,7 +736,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Índice
 %%
-\incluirindice%% Comente para remover este item
+%\incluirindice%% Comente para remover este item
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Fim do documento
