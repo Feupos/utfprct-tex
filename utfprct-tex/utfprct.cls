@@ -1733,7 +1733,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 \newlistentry{algorithm}{loa}{0}%% Entrada da lista de objetos flutuantes (algoritmo)
 \newfloat{algorithm}{loa}{\algorithmname}%% Objeto flutuante (algoritmo)
 \renewcommand{\cftalgorithmname}{\algorithmname\space}%% Nome da entrada na lista de objetos flutuantes (algoritmo)
-%\renewcommand*{\cftalgorithmaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (algoritmo)
+\renewcommand*{\cftalgorithmaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (algoritmo)
 \renewcommand{\afterloatitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (algoritmo)
 \setfloatadjustment{algorithm}{\centering}%% Ajuste do objeto flutuante (algoritmo)
 \AtBeginEnvironment{algorithmic}{\ABNTEXfontereduzida}%% Formatação do ambiente algorithmic
@@ -1753,7 +1753,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 \newlistentry{listing}{lol}{0}%% Entrada da lista de objetos flutuantes (algoritmo)
 \newfloat{listing}{lol}{\listingname}%% Objeto flutuante (algoritmo)
 %\renewcommand{\cftalgorithmname}{\algorithmname\space}%% Nome da entrada na lista de objetos flutuantes (algoritmo)
-%\renewcommand*{\cftlistingaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (algoritmo)
+\renewcommand*{\cftlistingaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (algoritmo)
 \renewcommand{\afterloltitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (algoritmo)
 \setfloatadjustment{listing}{\centering}%% Ajuste do objeto flutuante (algoritmo)
 
@@ -1769,7 +1769,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \renewcommand{\cftfigurename}{\figurename\space}%% Nome da entrada na lista de objetos flutuantes (figura)
-%\renewcommand*{\cftfigureaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (figura)
+\renewcommand*{\cftfigureaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (figura)
 \renewcommand{\afterloftitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (figura)
 \setfloatadjustment{figure}{\centering}%% Ajuste do objeto flutuante (figura)
 \newlistof{listofphotographs}{lop}{}%% Lista de objetos flutuantes (fotografia)
@@ -1783,14 +1783,14 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 \newlistentry{graph}{loh}{0}%% Entrada da lista de objetos flutuantes (gráfico)
 \newfloat{graph}{loh}{\graphname}%% Objeto flutuante (gráfico)
 \renewcommand{\cftgraphname}{\graphname\space}%% Nome da entrada na lista de objetos flutuantes (gráfico)
-%\renewcommand*{\cftgraphaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (gráfico)
+\renewcommand*{\cftgraphaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (gráfico)
 \renewcommand{\afterlohtitle}{}%% Espaçamento após o título da lista (gráfico)
 \setfloatadjustment{graph}{\centering}%% Ajuste do objeto flutuante (gráfico)
 \newlistof{listoftabframeds}{lod}{}%% Lista de objetos flutuantes (quadro)
 \newlistentry{tabframed}{lod}{0}%% Entrada da lista de objetos flutuantes (quadro)
 \newfloat{tabframed}{lod}{\tabframedname}%% Objeto flutuante (quadro)
 \renewcommand{\cfttabframedname}{\tabframedname\space}%% Nome da entrada na lista de objetos flutuantes (quadro)
-%\renewcommand*{\cfttabframedaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (quadro)
+\renewcommand*{\cfttabframedaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (quadro)
 \renewcommand{\afterlodtitle}{}%% Espaçamento após o título da lista (quadro)
 \setfloatadjustment{tabframed}{\centering}%% Ajuste do objeto flutuante (quadro)
 \newcommand{\incluirlistadeilustracoes}{%% Definição do comando para inclusão da lista de ilustrações
@@ -1809,7 +1809,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \renewcommand{\cfttablename}{\tablename\space}%% Nome da entrada na lista de objetos flutuantes (tabela)
-%\renewcommand*{\cfttableaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (tabela)
+\renewcommand*{\cfttableaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (tabela)
 \renewcommand{\afterlottitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (tabela)
 \setfloatadjustment{table}{\centering}%% Ajuste do objeto flutuante (tabela)
 \AtBeginEnvironment{tabular}{\ABNTEXfontereduzida}%% Formatação do ambiente tabular
