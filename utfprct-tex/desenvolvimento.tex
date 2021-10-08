@@ -24,10 +24,10 @@ utilizando ferramentas de desenvolvimento de C++ dito moderno, como
 e expressões \textit{lambda}, fazendo a aplicação dos conceitos de programação
 genérica e utilizando o método de desenvolvimento orientado a testes. 
 
-Em resumo, a Tabela \ref{tab:obj_fw4} apresenta os principais objetivos a serem
+Em resumo, o Quadro \ref{tab:obj_fw4} apresenta os principais objetivos a serem
 atingidos com o desenvolvimento do \textit{Framework} PON C++ 4.0, à luz dos
-objetivos da dissertação apresentados na Seção \ref{sec:obj_especificos}. Na
-tabela são apresentados os problemas presentes nos \textit{frameworks}
+objetivos da dissertação apresentados na Seção \ref{sec:obj_especificos}. No
+quadro são apresentados os problemas presentes nos \textit{frameworks}
 anteriores e, de maneira sucinta, como o desenvolvimento do \textit{Framework}
 PON C++ 4.0 pretende resolvê-los.
 
@@ -71,7 +71,7 @@ variáveis), ambos os exemplos apresentam estruturas bastante
 similares\footnote{Existe compilador de NOPL para \textit{Framework} PON C++
 4.0 desenvolvido por \citeonline{skora_2020}}.
 
-\begin{lstlisting}[language=C++, float=htb,
+\begin{lstlisting}[language=C++,
     caption = {Implementação do \textit{FBE} \textit{Sensor} em \textit{Framework} PON C++ 4.0},
     source = {Autoria própria},
     label = {cod:fw4_sensor}]
@@ -103,7 +103,9 @@ fbe Sensor
     end_rule
 end_fbe
 */
+
 struct NOPSensor: NOP::FBE {
+
     // Essa é a parte relativa a definição do FBE
     // Aqui se declaram e inicializam os Attributes
     NOP::SharedAttribute<bool> atIsRead{NOP::BuildAttribute(false)};
@@ -113,6 +115,7 @@ struct NOPSensor: NOP::FBE {
             atIsRead->SetValue(true);
             atIsActivated->SetValue(false);
         )};
+
     // Essa é a parte relativa a definição da Rule agregada ao FBE
     // com a definição das respectivas Premises, Condition, Action
     // e Instigation que a compõe
@@ -200,7 +203,7 @@ expressão de comparação dos \textit{Attributes}, que no caso será sempre um 
 Por fim, do ponto de vista de padrão de projetos, aproveitam-se os conceitos
 introduzidos por \citeonline{msc_Ronszcka_2012}, sendo que no \textit{Framework}
 PON C++ 4.0 são utilizados os padrões \textit{Observer}, \textit{Iterator},
-\textit{Builder} e \textit{Singleton}. A Tabela \ref{tab:padroes} sumariza onde
+\textit{Builder} e \textit{Singleton}. O Quadro \ref{tab:padroes} sumariza onde
 cada padrão é aplicado no \textit{framework}, enquanto detalhes sobre os padrões
 de projeto em si são discutidos ao longo do capítulo.
 
@@ -416,6 +419,8 @@ aplicação de políticas de execução, evidentes pelo uso de
 da política de execução, o balanceamento de carga fica a cargo da implementação
 do compilador \cite{oneal_2018}.
 
+\FloatBarrier
+
 Também pode ser observado no Código \ref{cod:observer_h} que a classe
 \textit{Observer} é derivada da classe \textit{Observable}. Isto é feito de modo
 a permitir a chamada do método \textit{Notify} com templates, conforme mostrado
@@ -455,6 +460,7 @@ apresentado no Código \ref{cod:observable_cpp}.
             {Autoria própria}, label ={cod:attribute_h},
             linerange={10-18,25-25,28-29}]
             {../code/Cpp-Framework-4_0/include/libnop/attribute.h}
+\FloatBarrier
 
 Desta forma, o tipo do \textit{template} especificado em \textit{T} pode ser
 qualquer tipo especificado pelo desenvolvedor, seja este um dos tipos básicos
@@ -509,6 +515,8 @@ foi possível eliminar essa dependência de \textit{templates} na classe
 a utilização de expressões \textit{lambda}, de forma que a classe
 \textit{Premise} não precisa armazenar a informação do tipo do \textit{template}
 dos seus \textit{Attributes}.
+
+\FloatBarrier
 
 Como exemplo de construção de \textit{Premises} são utilizados as
 \textit{Premises} da aplicação do sensor \textit{prIsActivated} e
@@ -1294,7 +1302,7 @@ De modo a exemplificar esta utilização, a estrutura \textit{Test} e sua
 respectiva implementação com o \textit{Framework} PON C++ 4.0 são apresentadas
 no Código \ref{cod:debug_test}, na qual um FBE simples é inicializado nomeando
 os seus membros, assim como nomeando o próprio \textit{FBE}. Um trecho de
-\textit{log} resultante da utilização dessa estrutura é apresentado na Tabela
+\textit{log} resultante da utilização dessa estrutura é apresentado no Quadro
 \ref{fig:log_fw4}. Nesse trecho podem ser observados os registros de mudança de
 valor dos \textit{Attributes}, nas linhas 1 e 3, até a aprovação e execução da
 \textit{Rule} pelo escalonador, nas linhas 7 e 8.
@@ -1585,7 +1593,7 @@ testes foram aprovados e que a execução levou menos de 1 segundo.
 
 \section{Reflexões sobre o \textit{Framework} PON C++ 4.0}\label{sec:dev_reflex}
 
-Dado o desenvolvimento do \textit{Framework} PON C++ 4.0, a Tabela
+Dado o desenvolvimento do \textit{Framework} PON C++ 4.0, o Quadro
 \ref{tab:obj_fw4_atingidos} reapresenta os objetivos propostos para o
 desenvolvimento do mesmo, ressaltando que todos foram atingidos em plenitude,
 conforme apresentado ao longo de todo este capítulo. Ademais, nesta seção são
@@ -1768,7 +1776,7 @@ conceitos comparados aos outros \textit{frameworks} disponíveis. Estes conceito
 foram anteriormente introduzidos na Seção \ref{sec:conceitos_pon}. A propriedade
 de distribuição do PON ainda não foi contemplada na implementação atual do
 \textit{Framework} PON C++ 4.0, porém trabalhos futuros pretendem contemplar
-esta propriedade em futuras melhorias no \textit{framework}. A Tabela
+esta propriedade em futuras melhorias no \textit{framework}. O Quadro
 \ref{tab:elementares_2} resume estes resultados.
 
 \begin{table}[!htb]
@@ -1801,7 +1809,7 @@ Fw. C++ Prot. & Fw. C++ 1.0 & Fw. C++ 2.0 & Fw. C++ 3.0 & \textbf{Fw. C++ 4.0} &
 Pelo fato do \textit{Framework} PON C++ 4.0 se tratar de uma evolução sobre o
 \textit{Framework} PON C++ 2.0, era de se esperar que todos os conceitos de
 programação materializados no \textit{Framework} PON C++ 2.0 também se
-encontrassem no \textit{Framework} PON C++ 4.0. A tabela \ref{tab:conceitos2}
+encontrassem no \textit{Framework} PON C++ 4.0. O Quadro \ref{tab:conceitos2}
 apresenta os conceitos de programação materializados pelos diferentes
 \textit{frameworks}, destacando o \textit{Framework} PON C++ 4.0. Em suma, no
 que diz respeito aos conceitos atingidos é possível notar que o
@@ -1810,7 +1818,26 @@ PON C++ 2.0 materializava, com a exceção da impertinência estática e
 \textit{Keeper}, porém também materializa o conceito de \textit{Condition}
 flexível.
 
-\begin{table}[!t]
+Devido ao aumento da flexibilidade dado pela adição do conceito de
+\textit{Condition} flexível é dificultada a implementação do conceito de
+impertinência, conforme discutido na Seção \ref{sec:estrutura_fw4}. Ainda, um
+dos objetivos da adição do conceito de impertinência é justamente melhorar o
+desempenho das aplicações. Entretanto, espera-se que, apesar de não contar com a
+materialização desse conceito, reduza os tempos de execução das aplicações em
+PON ao permitir uma melhor eficiência na composição e compartilhamento das
+entidades e também ao reduzir o número de entidades totais do código, como
+demonstrado nos Códigos \ref{cod:excomplex} e \ref{cod:exsimple}. Ainda, o
+conceito \textit{Keeper} também não é materializado, visto que sua implementação
+altera o fluxo tradicional de execução das \textit{Rules} do PON
+\cite{muchalski_2012}, podendo ser facilmente implementado com as mesmas
+adaptações que foram necessárias no \textit{Framework} PON C++ 2.0. Por fim, o
+conceito de \textit{Formation Rules} também não é implementado por nenhum
+\textit{framework} sendo materializado apenas por meio da tecnologia LingPON,
+visto que tal nível de abstração é difícil de ser implementado nas linguagens de
+programação dos \textit{frameworks}, pois exige uma etapa de compilação para
+interpretar a expressão destas \textit{Rules}.
+
+\begin{table}[!htb]
 \centering
 \caption{Conceitos do PON contemplados nas materializações do paradigma - com adição do \textit{Framework}
 PON C++ 4.0}
@@ -1838,34 +1865,14 @@ Impertinência dinâmica &&&&&&&\checkmark&&\\\hline
 \textit{Condition} flexível &&&&&\checkmark&&&&\\\hline
 \end{tabularx}
 \begin{tablenotes}
-  \item[*] Implementado sob a forma de uma adaptação no \textit{framework}
-  existente, visto que altera o fluxo tradicional de execução das
-  \textit{Rules} do PON \cite{muchalski_2012}
+    \item[*] Implementado sob a forma de uma adaptação no \textit{framework}
+    existente, visto que altera o fluxo tradicional de execução das
+    \textit{Rules} do PON \cite{muchalski_2012}
 \end{tablenotes}
 \end{threeparttable}
 \caption*{Fonte: Autoria própria}
 \label{tab:conceitos2}
 \end{table}
-
-Devido ao aumento da flexibilidade dado pela adição do conceito de
-\textit{Condition} flexível é dificultada a implementação do conceito de
-impertinência, conforme discutido na Seção \ref{sec:estrutura_fw4}. Ainda, um
-dos objetivos da adição do conceito de impertinência é justamente melhorar o
-desempenho das aplicações. Entretanto, espera-se que, apesar de não contar com a
-materialização desse conceito, reduza os tempos de execução das aplicações em
-PON ao permitir uma melhor eficiência na composição e compartilhamento das
-entidades e também ao reduzir o número de entidades totais do código, como
-demonstrado nos Códigos \ref{cod:excomplex} e \ref{cod:exsimple}. Ainda, o
-conceito \textit{Keeper} também não é materializado, visto que sua implementação
-altera o fluxo tradicional de execução das \textit{Rules} do PON
-\cite{muchalski_2012}, podendo ser facilmente implementado com as mesmas
-adaptações que foram necessárias no \textit{Framework} PON C++ 2.0. Por fim, o
-conceito de \textit{Formation Rules} também não é implementado por nenhum
-\textit{framework} sendo materializado apenas por meio da tecnologia LingPON,
-visto que tal nível de abstração é difícil de ser implementado nas linguagens de
-programação dos \textit{frameworks}, pois exige uma etapa de compilação para
-interpretar a expressão destas \textit{Rules}.
-
 
 Os resultados obtidos por meio da utilização do \textit{Framework} PON C++ 4.0
 para o desenvolvimento de aplicações são detalhados no capítulo seguinte. Nesses

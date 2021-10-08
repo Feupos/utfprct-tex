@@ -273,7 +273,7 @@
     \newcommand{\graphname}{Graph}
     \newcommand{\tabframedname}{Frame}
     \renewcommand{\listtablename}{List of Tables}
-    % \renewcommand{\tablename}{Table}
+    \renewcommand{\tablename}{Table}
     \newcommand{\nomefonte}{Source}
     \renewcommand{\nomname}{Nomenclature}
     \newcommand{\nomelistadeacronimos}{List of Acronyms}
@@ -329,8 +329,8 @@
     \newcommand{\photographname}{Fotografia}
     \newcommand{\graphname}{Gráfico}
     \newcommand{\tabframedname}{Quadro}
-    \renewcommand{\listtablename}{Lista de Tabelas}
-    % \renewcommand{\tablename}{Tabela}
+    \renewcommand{\listtablename}{Lista de Quadros}
+    \renewcommand{\tablename}{Quadro}
     \newcommand{\nomefonte}{Fonte}
     % \renewcommand{\nomname}{Nomenclatura}
     \newcommand{\nomelistadeacronimos}{Lista de Abreviaturas, Siglas e Acrônimos}
@@ -1246,14 +1246,14 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 		{\large{\imprimirtituloemmultiplaslinhas}}\\[35pt]
     }{
       \vspace{-70pt}
-		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
-    {\large{\imprimirtituloemmultiplaslinhasingles}}\\[10pt]%% Título do documento (em ingles)
+		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[10pt]%% Título do documento
+    {\large{\imprimirtituloemmultiplaslinhasingles}}\\[35pt]%% Título do documento (em ingles)
     }
 
   \end{center}
   \begin{flushright}%% Alinhamento à direita
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
-      \parbox{0.5\textwidth}{%% Caixa de texto			
+      \parbox{0.53\textwidth}{%% Caixa de texto			
 	  \imprimirdescricaododocumento\\[\linha]		
       \imprimiratribuicaoorientador: \imprimirtitulodoorientador\ \imprimirnomedoorientador\\%% Orientador
 	  \ifthenelse{\equal{\imprimiratribuicotutela}{true}}{%%
@@ -1808,7 +1808,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 %% Lista de tabelas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \renewcommand{\cfttablename}{\tablename\space}%% Nome da entrada na lista de objetos flutuantes (tabela)
+\renewcommand{\cfttablename}{\tablename\space}%% Nome da entrada na lista de objetos flutuantes (tabela)
 \renewcommand*{\cfttableaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (tabela)
 \renewcommand{\afterlottitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (tabela)
 \setfloatadjustment{table}{\centering}%% Ajuste do objeto flutuante (tabela)
@@ -2294,8 +2294,8 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 %% Legendas de objetos flutuantes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\setlength{\abovecaptionskip}{1pt}%% Espaçamento acima da legenda
-%\setlength{\belowcaptionskip}{1pt}%% Espaçamento abaixo da legenda
+\setlength{\abovecaptionskip}{1pt}%% Espaçamento acima da legenda
+\setlength{\belowcaptionskip}{1pt}%% Espaçamento abaixo da legenda
 
 \hangcaption%% Recuo do texto das legendas
 \if@legendascentralizadas%% Alinhamento das legendas centralizado

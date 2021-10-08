@@ -315,12 +315,15 @@ dito, alguns exemplos de linguagens que implementam o PL são  Oz
 
 \begin{figure}[!htb]
 \centering\caption{Conhecimento representado em regras no PL}
+\smallskip
 \subcaptionbox{Entidades}{\includegraphics[width=0.50\textwidth]{../figures/ab_pl.png}}%
 \hfill
 \subcaptionbox{Regra}{\includegraphics[width=0.50\textwidth]{../figures/rule_pl.png}}%
 \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
 \label{fig:rule_pl}
 \end{figure}
+
+\FloatBarrier
 
 Ainda, há linguagens do PL, como OPS e Ilog Rules, que tem como base algoritmos
 de inferência otimizados como o RETE \cite{forgy_1982}. Outros exemplos de
@@ -335,6 +338,7 @@ regras em estrutura de dados \cite{doc_simao_2005,msc_Banaszewski_2009}.
 \begin{figure}[!htb]
   \centering
   \caption{Arquitetura interna de um Sistema Baseado em Regras}
+  \smallskip
   \includegraphics[width=0.6\textwidth]{../figures/fact_base.png}\smallskip
   \caption*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:fact_base}
@@ -466,50 +470,6 @@ sensor em linguagem de programação JavaScript com o \textit{framework} Angular
 na qual pode ser observado que a implementação do sensor importa e implementa a
 funcionalidade do componente \textit{OnInit}.
 
-\begin{lstlisting}[caption = {Exemplo de aplicação de sensor em React no POC},
-source = {Autoria própria}, float=htb,
-label  = {cod:components_js}]
-/* Autoria: Prof. Dr. Roni Fabio Banaszewski - Data 24/06/2021 - Grupo de Pesquisa: PON - UTFPR */ 
-
-import {Component, OnInit} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-
-export class AppComponent implements OnInit {
-  title = 'sensor-app';
-
-  ready: boolean = false;
-  active: boolean = true;
-
-  private readySubject = new BehaviorSubject<boolean>(this.ready);
-  private activeSubject = new BehaviorSubject<boolean>(this.active);
-
-  ngOnInit() {
-    this.readySubject.subscribe(value => {
-      this.ready = value;
-      this.rule()
-    });
-
-    this.activeSubject.subscribe(value => {
-      this.active = value;
-      this.rule()
-    });
-  }
-
-  rule() {
-    if (this.ready == false && this.active == true) {
-      this.readySubject.next(true);
-      this.activeSubject.next(false);
-    }
-  }
-}
-\end{lstlisting}
-
 A principal desvantagem do POC é que o foco na reusabilidade dos componentes
 tende a aumentar a complexidade deles, de modo que se torna necessário a
 execução de processos mais cuidadosos de planejamento do sistema e manutenção
@@ -517,6 +477,50 @@ dos componentes. Quanto mais reutilizável for o componente, mais complexo ele s
 torna e mais difícil é a sua manutenção \cite{crnkovic_2002}. Por fim,
 internamente o POC é, na prática, o encapsulamento de módulos criados via
 paradigmas já existentes.
+
+\begin{lstlisting}[caption = {Exemplo de aplicação de sensor em React no POC},
+  source = {Autoria própria}, float=htb,
+  label  = {cod:components_js}]
+  /* Autoria: Prof. Dr. Roni Fabio Banaszewski - Data 24/06/2021 - Grupo de Pesquisa: PON - UTFPR */ 
+  
+  import {Component, OnInit} from '@angular/core';
+  import {BehaviorSubject} from "rxjs";
+  
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  
+  export class AppComponent implements OnInit {
+    title = 'sensor-app';
+  
+    ready: boolean = false;
+    active: boolean = true;
+  
+    private readySubject = new BehaviorSubject<boolean>(this.ready);
+    private activeSubject = new BehaviorSubject<boolean>(this.active);
+  
+    ngOnInit() {
+      this.readySubject.subscribe(value => {
+        this.ready = value;
+        this.rule()
+      });
+  
+      this.activeSubject.subscribe(value => {
+        this.active = value;
+        this.rule()
+      });
+    }
+  
+    rule() {
+      if (this.ready == false && this.active == true) {
+        this.readySubject.next(true);
+        this.activeSubject.next(false);
+      }
+    }
+  }
+\end{lstlisting}
 
 \subsubsection{Paradigma Orientado a Eventos (POE)}\label{sec:poe}
 
@@ -676,6 +680,15 @@ sensorem linguagem de programação Elixir/Erlang. Neste exemplo simples, pode s
 observada a complexidade presente devido às funcionalidades básicas necessárias
 para a comunicação entre agentes.
 
+O Paradigma Orientado a Atores (POAt) é consideravelmente similar ao POAg, sendo
+o modelo de agentes uma extensão do modelo de atores. A diferença entre agentes
+e atores é que os agentes são tipicamente mais complexos e capazes de tomada de
+decisão lógica \cite{cardoso_2013}. As principais linguagens do POAt são Akka e
+Erlang. Ambos os modelos do POAt e POAg trazem a vantagem de facilitar o
+paralelismo devido ao alto desacoplamento entre as entidades, enquanto uma das
+principais desvantagens é o alto tempo de execução da comunicação entre os
+atores/agentes.
+
 \begin{lstlisting}[caption = {Exemplo de aplicação de sensor em Elixir no POAg}, %float=htb,
 source = {Autoria própria}, language=elixir, float=htb,
   label = {cod:agent_ex}]
@@ -720,15 +733,6 @@ defmodule Sensor do use GenServer
 end
 \end{lstlisting}
 
-O Paradigma Orientado a Atores (POAt) é consideravelmente similar ao POAg, sendo
-o modelo de agentes uma extensão do modelo de atores. A diferença entre agentes
-e atores é que os agentes são tipicamente mais complexos e capazes de tomada de
-decisão lógica \cite{cardoso_2013}. As principais linguagens do POAt são Akka e
-Erlang. Ambos os modelos do POAt e POAg trazem a vantagem de facilitar o
-paralelismo devido ao alto desacoplamento entre as entidades, enquanto uma das
-principais desvantagens é o alto tempo de execução da comunicação entre os
-atores/agentes.
-
 \subsection{Considerações Sobre os Paradigmas Dominantes e Emergentes}
 
 Esta seção permitiu contextualizar as principais características, como vantagens
@@ -736,7 +740,7 @@ e desvantagens dos paradigmas de programação atuais, tanto dos dominantes como
 dos emergentes. Na Seção \ref{sec:motiv} foram levantadas as principais demandas
 do desenvolvimento de \textit{software} atuais, que seriam a programação em alto
 nível, paralelismo e desempenho. Nesse sentido, nenhum dos Paradigmas Dominantes
-atende de forma simultânea a todas essas demandas. Conforme detalhado na Tabela
+atende de forma simultânea a todas essas demandas. Conforme detalhado no Quadro
 \ref{tab:demandas2}, o PI apesar de apresentar bom desempenho, não possibilita a
 programação em alto nível e dificulta a implementação de paralelismo, enquanto o
 PD apresenta tais características, porém o faz em troca de desempenho inferior
@@ -1404,7 +1408,7 @@ utilizando todos os \textit{FBEs} agregados.
 \subsection{Resumo dos Conceitos de Programação do PON}
 
 Nas seções anteriores foram apresentados diversos conceitos de programação do
-PON. De forma a facilitar o entendimento sobre tais conceitos, a Tabela
+PON. De forma a facilitar o entendimento sobre tais conceitos, o Quadro
 \ref{tab:resumo_conceitos} apresenta um resumo de cada um desses conceitos.
 Isto é feito de forma a apresentar de forma simplificada e centralizada o
 conhecimento sobre os conceitos de programação do PON.
@@ -1499,6 +1503,7 @@ no Código \ref{cod:mira_alvo_fbe}.
 \begin{minipage}{.45\textwidth}
   \centering
   \captionof{figure}{Cenário do Mira ao Alvo}
+  \includegraphics[width=0.95\textwidth]{../figures/mira_alvo.png}
   \captionof{figure}*{Fonte: \citeonline{msc_Banaszewski_2009}}
   \label{fig:mira_alvo}
 \end{minipage}\hfill
@@ -1524,7 +1529,6 @@ inst
  Archer archer
  Apple apple
 end_inst
-
 rule rlShootApple
   condition
       premise prIdentity
@@ -1601,8 +1605,8 @@ instanciação de uma aplicação em PON, usando as entidades do pacote
 
 \begin{figure}[!htb]
   \centering
+  \caption{Estrutura do \textit{framework} C++ 1.0}
   \includegraphics[width=0.85\textwidth]{../figures/fw1_structure.png}
-  \caption{Estrutura do \textit{framework} C++ 1.0} \includegraphics[width=.8\textwidth]{../figures/mira_alvo.png}
   \caption*{Fonte:
     \citeonline{msc_Banaszewski_2009}}
   \label{fig:fw_pkg}
@@ -1669,7 +1673,8 @@ se refere ao \textit{framework} C++ Prototipal e \enquote{Versão Nova} se refer
 \begin{figure}[!htb]
   \centering
   \caption{Comparação do desempenho do \textit{framework} C++ 1.0 com o
-  \textit{framework} C++ Prototipal} \includegraphics[width=\textwidth]{../figures/fw1_vs_prot.png}
+  \textit{framework} C++ Prototipal}
+  \includegraphics[width=0.9\textwidth]{../figures/fw1_vs_prot.png}
   \caption*{Fonte:
   \citeonline{msc_Banaszewski_2009}}
   \label{fig:fw1_vs_prot}
@@ -1691,7 +1696,8 @@ do PON em \textit{software} \cite{doc_ronszcka_2019}.
 
 \begin{figure}[!htb]
   \centering
-  \caption{Estrutura do \textit{framework} C++ 2.0} \includegraphics[width=0.9\textwidth]{../figures/fw2_structure.png}
+  \caption{Estrutura do \textit{framework} C++ 2.0}
+  \includegraphics[width=0.8\textwidth]{../figures/fw2_structure.png}
   \caption*{Fonte:
     \citeonline{msc_valenca_2012}}
   \label{fig:fw2_struct}
@@ -1716,7 +1722,7 @@ programa em PON que passa então por um processo de geração de código para o
 
 \begin{figure}[!htb]
   \centering
-  \caption{\textit{Wizard} PON} \includegraphics[width=.9\textwidth]{../figures/wizard.png}
+  \caption{\textit{Wizard} PON} \includegraphics[width=0.8\textwidth]{../figures/wizard.png}
   \caption*{Fonte: \citeonline{msc_valenca_2012}}
   \label{fig:wizard}
 \end{figure}
@@ -1758,8 +1764,6 @@ for ( int i = 0; i < appleList->size(); i++ ){
 }
 \end{lstlisting}
 
-\FloatBarrier
-
 A mesma aplicação Mira ao Alvo é utilizada para comparar o desempenho do
 \textit{Framework} PON C++ 2.0 com o \textit{framework} C++ 1.0. Nestes testes, a
 utilização do \textit{Framework} PON C++ 2.0 foi com a estrutura de dados
@@ -1773,10 +1777,12 @@ desempenho de cerca três vezes, conforme observado na Figura
   \centering
   \caption{Comparação do desempenho do \textit{Framework} PON C++ 2.0 com o
   \textit{Framework} PON C++ 1.0}
-  \includegraphics[width=0.8\textwidth]{../figures/fw2_vs_fw1.png}
+  \includegraphics[width=0.7\textwidth]{../figures/fw2_vs_fw1.png}
   \caption*{Fonte: \citeonline{msc_valenca_2012}}
   \label{fig:fw2_vs_fw1}
 \end{figure}
+
+\FloatBarrier
 
 \subsubsection{\textit{Framework} PON C++ 3.0}\label{sec:fw3}
 
@@ -2748,14 +2754,14 @@ distribuída com um bom nível de balanceamento entre os núcleos
   \begin{minipage}{.5\textwidth}
     \centering
     \captionof{figure}{Taxa média de ocupação por núcleo em ambiente VM02}
+    \includegraphics[width=\linewidth]{../figures/vm02.png}
     \captionof{figure}*{Fonte: \citeonline{msc_negrini_2019}}
     \label{fig:vm02}
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../figures/vm04.png}
-    \smallskip
     \captionof{figure}{Taxa média de ocupação por núcleo em ambiente VM02}
+    \includegraphics[width=\linewidth]{../figures/vm04.png}
     \captionof{figure}*{Fonte: \citeonline{msc_negrini_2019}}
     \label{fig:vm04}
   \end{minipage}
@@ -2765,17 +2771,15 @@ distribuída com um bom nível de balanceamento entre os núcleos
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../figures/vm08.png}
-    \smallskip
     \captionof{figure}{Taxa média de ocupação por núcleo em ambiente VM08}
+    \includegraphics[width=\linewidth]{../figures/vm08.png}
     \captionof{figure}*{Fonte: \citeonline{msc_negrini_2019}}
     \label{fig:vm08}
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../figures/vm16.png}
-    \smallskip
     \captionof{figure}{Taxa média de ocupação por núcleo em ambiente VM16}
+    \includegraphics[width=\linewidth]{../figures/vm16.png}
     \captionof{figure}*{Fonte: \citeonline{msc_negrini_2019}}
     \label{fig:vm16}
   \end{minipage}
@@ -2795,10 +2799,10 @@ core}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{../figures/neuropon_elixir.png}
   \smallskip
   \caption{Tempos médios de execução NeuroPON de uma RNA MLP para a função XOR
-  no \textit{Framework} PON Elixir/Erlang} \includegraphics[width=\linewidth]{../figures/vm02.png}
+  no \textit{Framework} PON Elixir/Erlang}
+  \includegraphics[width=0.8\textwidth]{../figures/neuropon_elixir.png}
     \smallskip
     \caption*{Fonte:
   \citeonline{doc_Schutz_2019}}
@@ -2830,7 +2834,7 @@ atores são acessíveis por seu endereço, mesmo em sistemas distribuídos
 \begin{figure}[!htb]
   \centering
   \caption{Estrutura de atores em Akka.NET}
-  \includegraphics[width=0.8\textwidth]{../figures/atores_akka.png}
+  \includegraphics[width=0.9\textwidth]{../figures/atores_akka.png}
   \smallskip
   \caption*{Fonte: \citeonline{martini_2019}}
   \label{fig:akka_actor}
@@ -2847,7 +2851,7 @@ O diagrama do modelo de atores para esta aplicação é mostrado na Figura
 \begin{figure}[!htb]
   \centering
   \caption{Modelo de atores na aplicação do portão eletrônico em Akka.NET}
-  \includegraphics[width=0.8\textwidth]{../figures/akka_actor.png}
+  \includegraphics[width=0.9\textwidth]{../figures/akka_actor.png}
   \smallskip
   \caption*{Fonte: \citeonline{martini_2019}}
   \label{fig:akka_portao}
@@ -2923,12 +2927,14 @@ resultados melhores \cite{martini_2019}.
   \label{fig:result_akka}
 \end{figure}
 
+\FloatBarrier
+
 \subsection{Reflexões sobre os \textit{frameworks} do PON}\label{sec:reflex}
 
 Esta subseção traz um arrazoado sobre os \textit{frameworks} do PON para
 \textit{software} apresentados nas subseções anteriores. Tal arrazoado analisa
 estas materializações sobre distintos pontos de vista, nas suas três subseções
-que seguem,
+que seguem.
 
 \subsubsection{\textit{Frameworks} do PON vis-à-vis sua teoria}
 
@@ -2938,14 +2944,12 @@ uma dessas materializações contempla apenas alguns dos conceitos e propriedade
 do PON introduzidos em seções prévias deste presente capítulo.
 
 Os conceitos e o potencial de propriedades que são implementados em cada uma
-destas materializações são apresentados nas tabelas abaixo. A Tabela
+destas materializações são apresentados nos quadros abaixo. O Quadro
 \ref{tab:elementares} relaciona quais propriedades elementares alcançam seus
 potenciais, abordadas na Seção \ref{sec:estado_arte_pon}, são contempladas em
-cada uma das materializações do PON, do mesmo modo que a Tabela
+cada uma das materializações do PON, do mesmo modo que o Quadro
 \ref{tab:conceitos} relaciona os conceitos apresentados na Seção
 \ref{sec:conceitos_pon}. 
-%Nessas tabelas o símbolo (\checkmark) indica que
-%contempla completamente e (\textasciitilde) indica que contempla parcialmente.
 
 \begin{table}[!htb]
   \centering
@@ -2971,6 +2975,8 @@ cada uma das materializações do PON, do mesmo modo que a Tabela
   \caption*{Fonte: Autoria própria}
   \label{tab:elementares}
 \end{table}
+
+\FloatBarrier
 
 Pode ser dito que nenhuma das materializações atinge de forma plena o quesito de
 programação em alto nível, devido à complexidade do uso dos \textit{frameworks}
@@ -3012,7 +3018,7 @@ apresentam desempenho mais baixo.
 
 Além da potencialidade do uso das propriedades elementares do PON, há também os
 conceitos de programação ou desenvolvimento em PON que foram tratados na Seção
-\ref{sec:conceitos_pon}. Isto dito, a Tabela \ref{tab:conceitos} mostra que
+\ref{sec:conceitos_pon}. Isto dito, o Quadro \ref{tab:conceitos} mostra que
 todas as materializações não implementam um ou mais daqueles conceitos
 finalmente. Isso pode ser atribuído ao grau de maturidade de cada uma das
 materializações, assim como pela dificuldade de se implementar determinados
@@ -3324,9 +3330,11 @@ destacando a 1.X e 2.0, foi proposto um novo método para uniformizar o processo
 de construção de linguagens e compiladores específicos para o PON em plataformas
 distintas. Para esse método foi dado o nome de MCPON \cite{doc_ronszcka_2019}.
 
+\FloatBarrier
+
 Em suma, o MCPON define um conjunto de diretrizes e regras para a construção de
 uma representação intermediária adequada para programas em PON. Esta forma
-intermediária é dada por meio de um grafo, o Grafo PON, que permite representar
+intermediária é dada por meio do Grafo PON, que permite representar
 apropriadamente um programa em PON. O MCPON institui um sistema completo para o
 processo de compilação, usando o Grafo PON. Nesse âmbito, a Figura
 \ref{fig:mcpon} ilustra as cinco etapas do método MCPON
@@ -3335,7 +3343,7 @@ processo de compilação, usando o Grafo PON. Nesse âmbito, a Figura
 \begin{figure}[!htb]
   \centering
   \caption{Método MCPON}
-  \includegraphics[width=0.8\textwidth]{../figures/metodo_mcpon.png}
+  \includegraphics[width=0.7\textwidth]{../figures/metodo_mcpon.png}
   \smallskip
   \caption*{Fonte: \citeonline{doc_ronszcka_2019}}
   \label{fig:mcpon}
@@ -3366,6 +3374,8 @@ na estrutura do Grafo PON \cite{msc_negrini_2019}.
   \label{fig:grafo_pon}
 \end{figure}
 
+\FloatBarrier
+
 Essa etapa de compilação intermediária por meio do Grafo PON permite  a geração
 de códigos específicos para diferentes alvos com base em um único código-fonte
 em LingPON, processo que é ilustrado na Figura \ref{fig:sistema_compilacao}.
@@ -3376,7 +3386,7 @@ específico em linguagens como C e C++.
 \begin{figure}[!htb]
   \centering
   \caption{Sistema de compilação do PON}
-  \includegraphics[width=0.8\textwidth]{../figures/sistema_compilacao.png}
+  \includegraphics[width=0.85\textwidth]{../figures/sistema_compilacao.png}
   \smallskip
   \caption*{Fonte: \citeonline{doc_ronszcka_2019}}
   \label{fig:sistema_compilacao}
@@ -3426,7 +3436,6 @@ integração mais fácil com outras bibliotecas externas, sendo que o uso pode s
 feito associado com a LingPON no tocante a escrita dalógica principal de
 \textit{FBEs} e \textit{Rules}.
 
-\clearpage
 \section{Método de teste de \textit{software} para o PON}\label{sec:test_pon}
 
 Dada que uma das propostas deste trabalho é utilizar o método TDD no
@@ -3472,12 +3481,12 @@ de classes de equivalência define uma classe de valores válidos e uma classe d
 valores inválidos para o \textit{Attribute} desta \textit{Premise}, conforme
 apresentado na Figura \ref{fig:classe_equivalencia}. Ainda, com o levantamento
 das classes de equivalência, podem ser planejados os devidos casos de testes
-para esta \textit{Premise}, conforme apresentados na Tabela \ref{tab:test_case}
+para esta \textit{Premise}, conforme apresentados no Quadro \ref{tab:test_case}
 
 \begin{figure}[!htb]
   \centering
   \caption{Classes de equivalência e análise de valores limite}
-  \includegraphics[width=0.7\textwidth]{../figures/classes_equivalencia.png}
+  \includegraphics[width=\textwidth]{../figures/classes_equivalencia.png}
   \smallskip
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:classe_equivalencia}
@@ -3499,8 +3508,6 @@ para esta \textit{Premise}, conforme apresentados na Tabela \ref{tab:test_case}
 \label{tab:test_case}
 \end{table}
 
-\FloatBarrier
-
 Para cada unidade (\textit{i.e.}, \textit{Premises}, \textit{Conditions},
 \textit{Rules}, \textit{Methods}) é necessário o levantamento dessas classes de
 equivalência que permitem planejar os casos de teste para cada uma delas. A
@@ -3512,7 +3519,7 @@ dos casos de teste e análise dos resultados dos testes unitários
 \begin{figure}[!htb]
   \centering
   \caption{Fase de testes unitários do PON}
-  \includegraphics[width=0.9\textwidth]{../figures/unit_pon.png}
+  \includegraphics[width=\textwidth]{../figures/unit_pon.png}
   \smallskip
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:unit_pon}
@@ -3549,6 +3556,8 @@ fluxos alternativos de eventos em um caso de uso.
   \caption*{Fonte: \citeonline{msc_Kossoski_2015}}
   \label{fig:use_cases}
 \end{figure}
+
+\FloatBarrier
 
 Por fim, \citeonline{msc_Kossoski_2015} propõe duas abordagens para o teste de
 integração utilizando casos de uso: desenvolver estes que exercitem as
@@ -4250,6 +4259,8 @@ std::sort(std::execution::par, v.begin(), v.end());
 std::sort(std::execution::par_unseq, v.begin(), v.end());
 \end{lstlisting}
 
+\FloatBarrier
+
 Enquanto os algoritmos da STL já apresentam implementações paralelizáveis, como
 \textit{std::sort}, o desenvolvedor também pode desenvolver seus próprios
 algoritmos e recorrer às políticas de execução por meio do uso de expressões
@@ -4442,11 +4453,9 @@ validar o resultado do teste.
 
 \begin{lstlisting}[caption = {Caso de teste com Google Test}, float=htb,
 source = {Autoria própria}, label = {cod:test_case}]
-TEST(Premise, Simple)
-{
+TEST(Premise, Simple) {
     NOP::SharedAttribute<int> at1 = NOP::BuildAttribute<int>(-1);
     NOP::SharedPremise pr1 = NOP::BuildPremise<int>(at1, 1, NOP::Equal());
-
     EXPECT_FALSE(pr1->Approved());
     at1->SetValue(1);
     EXPECT_TRUE(pr1->Approved());
@@ -4489,16 +4498,12 @@ static void BM_Sensor(benchmark::State& state)
 {
     // Este código não é temporizado
     std::vector<std::shared_ptr<NOPSensor>> sensors;
-
     // state.range(0) é o primeiro argumento
-    for (int i = 0; i < state.range(0); i++)
-    {
+    for (int i = 0; i < state.range(0); i++) {
         sensors.push_back(std::make_shared<NOPSensor>());
     }
-
     // Este código é temporizado
-    for (auto _ : state)
-    {
+    for (auto _ : state) {
         // state.range(1) é o segundo argumento
         for (int i = 0; i < state.range(1); i++)
         {
@@ -4506,7 +4511,6 @@ static void BM_Sensor(benchmark::State& state)
         }
     }
 }
-
 BENCHMARK(BM_Sensor)->Args({100000, 100000}); // Registra benchmark com parâmetros
 BENCHMARK_MAIN(); // Executa todos os benchmarks registradosmod
 \end{lstlisting}
@@ -4529,6 +4533,8 @@ exemplificado na Figura \ref{fig:google_bench_result}, na qual são apresentadas
   \caption*{Fonte: \citeonline{google_test_primer}}
   \label{fig:google_bench_result}
 \end{figure}
+
+\FloatBarrier
 
 \section{Reflexões sobre os problemas em aberto}\label{sec:problemas}
 

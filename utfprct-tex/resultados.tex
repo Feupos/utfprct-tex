@@ -81,7 +81,7 @@ manualmente, servindo o código em LingPON de guia tão somente. O Código
 com o \textit{Framework} PON C++ 4.0, utilizando um total de apenas 13 linhas.
 
 \begin{lstlisting}[language=nopl, caption={\textit{FBE} \textit{Sensor} em LingPON},
-  label = {cod:sensor_ex_nopl}, float=htb,
+  label = {cod:sensor_ex_nopl}, %float=htb,
   source = {Fonte: Autoria própria}
   ]
 fbe Sensor
@@ -305,15 +305,6 @@ cerca de 24 MB, e então sendo apropriadamente desalocada antes da nova iteraç�
 demonstrando a estabilidade do gerenciamento de memória, sendo realizado com a
 utilização dos \textit{smart pointers}.
 
-\begin{figure}[!htb]
-\centering
-\caption{Consumo de memória \textit{Framework} PON C++ 4.0}
-\includegraphics[width=\textwidth]{../figures/fw4_mem.png}
-\smallskip
-\caption*{Fonte: Autoria própria}
-\label{fig:fw4_mem}
-\end{figure}
-
 Desta forma, fica explícito que o \textit{Framework} PON C++ 4.0 apresenta
 ganhos de desempenho significativos com relação ao \textit{Framework} PON C++
 2.0. No cenário da aplicação de sensores, quando comparado ao \textit{Framework}
@@ -322,6 +313,15 @@ execução no pior caso, e em 85\% no melhor caso. Além da redução nos tempos
 execução, também reduziu em quase dois terços o consumo de memória e não
 apresentou o problema de vazamento de memória apresentado no gráfico da Figura
 \ref{fig:fw2_mem}.
+
+\begin{figure}[!htb]
+\centering
+\caption{Consumo de memória \textit{Framework} PON C++ 4.0}
+\includegraphics[width=\textwidth]{../figures/fw4_mem.png}
+\smallskip
+\caption*{Fonte: Autoria própria}
+\label{fig:fw4_mem}
+\end{figure}
 
 Uma aplicação de cunho similar, porém com contexto ainda mais restrito ao grupo
 de pesquisa, a aplicação mira ao alvo. Esta aplicação apresenta nível de
@@ -362,6 +362,8 @@ Adaptado de \citeonline{Mullapudi_2014}}
 \label{fig:bitonic_order}
 \end{figure}
 
+\FloatBarrier
+
 O algoritmo do \textit{Bitonic Sort} pode ser dividido em vários estágios, dado
 o fato que as comparações são realizadas entre dois elementos e os mesmos são
 comparados apenas uma vez dentro de cada estágio, de tal modo que as comparações
@@ -386,13 +388,12 @@ atual para os \textit{Attributes} dos comparadores das etapas seguintes.
 \begin{figure}[!htb]
 \centering
 \caption{\textit{Rules} para comparador do \textit{Bitonic Sort} em PON}
-\includegraphics[width=0.9\textwidth]{../figures/rule_bitonic.png}
+\includegraphics[width=0.85\textwidth]{../figures/rule_bitonic.png}
 \smallskip
 \caption*{Fonte: Autoria própria}
 \label{fig:rule_bitonic}
 \end{figure}
 
-\FloatBarrier
 
 Na estrutura do ordenador implementado com o \textit{Framework} PON C++ 4.0,
 todas as entidades do PON são criadas de forma dinâmica na construtora da
@@ -798,7 +799,7 @@ NOP::SharedRule rlTree_0_5 = NOP::BuildRule(
 O algoritmo \textit{Random Forest} possibilita a utilização de um número
 variável de árvores de decisão. Dessa forma, com a implementação supracitada,
 também é possível gerar código para diferentes números de árvores. Nos testes
-foram utilizados os valores de 1, 10, 20, 50 e 100 árvores. Na Tabela
+foram utilizados os valores de 1, 10, 20, 50 e 100 árvores. No Quadro
 \ref{tab:elementos_arvores} são relacionados os números de elementos necessários
 para a construção de cada versão do classificador com diferentes números de
 árvores.
@@ -1257,7 +1258,7 @@ jogo utilizando o POO em C++, o \textit{Framework} PON C++ 2.0 e o
 \textit{cloc}\footnote{Ferramenta disponível em
 \url{https://github.com/AlDanial/cloc}}, foi avaliado o número de linhas
 contidas nos códigos que compõem cada uma destas implementações. Conforme
-apresentado na Tabela \ref{tab:linhas_de_codigo_nopunreal}, a implementação com
+apresentado no Quadro \ref{tab:linhas_de_codigo_nopunreal}, a implementação com
 o \textit{Framework} PON C++ 4.0 conseguiu reduzir em 14.75\% o número de linhas
 de código quando comparado com a implementação com o \textit{Framework} PON C++
 2.0, e possui apenas 7.6\% mais linhas de código que a implementação com o POO
