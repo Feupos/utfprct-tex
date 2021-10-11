@@ -24,10 +24,9 @@ utilizando ferramentas de desenvolvimento de C++ dito moderno, como
 e expressões \textit{lambda}, fazendo a aplicação dos conceitos de programação
 genérica e utilizando o método de desenvolvimento orientado a testes. 
 
-Em resumo, o Quadro \ref{tab:obj_fw4} apresenta os principais objetivos a serem
+Em resumo, a Tabela \ref{tab:obj_fw4} apresenta os principais objetivos a serem
 atingidos com o desenvolvimento do \textit{Framework} PON C++ 4.0, à luz dos
-objetivos da dissertação apresentados na Seção \ref{sec:obj_especificos}. No
-quadro são apresentados os problemas presentes nos \textit{frameworks}
+objetivos da dissertação apresentados na Seção \ref{sec:obj_especificos}. Na tabela são apresentados os problemas presentes nos \textit{frameworks}
 anteriores e, de maneira sucinta, como o desenvolvimento do \textit{Framework}
 PON C++ 4.0 pretende resolvê-los.
 
@@ -35,7 +34,7 @@ PON C++ 4.0 pretende resolvê-los.
 \centering
 \caption{Problemas a serem endereçados pelo \textit{Framework} PON C++ 4.0}
 \smallskip
-\begin{tabularx}{\textwidth}{|l|X|}\hline
+\begin{tabularx}{\textwidth}{l|X}\hline
     Objetivo & Proposta   \\\hline\hline
     Adicionar a flexibilidade de tipos & \textit{Attribute} com tipo \textit{template} \\ \hline
     Adicionar flexibilidade algorítmica & \textit{Condition} com expressões \textit{lambda} \\ \hline
@@ -215,7 +214,7 @@ explicação do cerne do \textit{framework}, dado pelo mecanismo de notificaçõ
 seguido das entidades principais, e por fim as abstrações e facilitadores de
 desenvolvimento.
 
-\begin{table}[!htb]
+\begin{tabframed}[!htb]
     \centering
     \caption{Padrões de projeto aplicados no \textit{Framework} PON C++ 4.0}
     \smallskip
@@ -229,7 +228,7 @@ desenvolvimento.
     \end{tabularx}
     \caption*{Fonte: Autoria própria}
     \label{tab:padroes}
-    \end{table}
+    \end{tabframed}
 
 \section{Mecanismo de notificações}\label{sec:observer}
 
@@ -1379,7 +1378,7 @@ Isso é feito por meio de uma opção de compilação \textit{LIBNOP\_LOG\_ENABL
 que pode ser configurada pelo desenvolvedor de acordo com a sua necessidade.
 Esta e outras opções de compilação são detalhadas na seção seguinte.
 
-\begin{table}[!htb]
+\begin{tabframed}[!htb]
     \begin{lstlisting}[numbers=left,
     stepnumber=1,frame=lines]
 [2021-03-27 18:40:21.494] [NOP] [info] TestFBE - at1: Value changed to 1
@@ -1396,7 +1395,7 @@ Esta e outras opções de compilação são detalhadas na seção seguinte.
     \caption{Exemplo de \textit{logs} do \textit{Framework} PON C++ 4.0}
     \fonte{Autoria própria}
     \label{fig:log_fw4}
-\end{table}
+\end{tabframed}
 
 Ainda, para a implementação deste mecanismo é utilizada a biblioteca
 spdlog\footnote{Código fonte disponível em
@@ -1593,7 +1592,7 @@ testes foram aprovados e que a execução levou menos de 1 segundo.
 
 \section{Reflexões sobre o \textit{Framework} PON C++ 4.0}\label{sec:dev_reflex}
 
-Dado o desenvolvimento do \textit{Framework} PON C++ 4.0, o Quadro
+Dado o desenvolvimento do \textit{Frameworka} PON C++ 4.0, a Tabela
 \ref{tab:obj_fw4_atingidos} reapresenta os objetivos propostos para o
 desenvolvimento do mesmo, ressaltando que todos foram atingidos em plenitude,
 conforme apresentado ao longo de todo este capítulo. Ademais, nesta seção são
@@ -1603,7 +1602,7 @@ feitas reflexões sobre como esses objetivos foram alcançados.
 \centering
 \caption{Objetivos atingidos pelo \textit{Framework} PON C++ 4.0}
 \smallskip
-\begin{tabularx}{\textwidth}{|l|X|l|}\hline
+\begin{tabularx}{\textwidth}{l|X|l}\hline
     Objetivo & Proposta & Atingido  \\\hline\hline
     Adicionar a flexibilidade de tipos & \textit{Attribute} com tipo \textit{template} & Sim \\ \hline
     Adicionar flexibilidade algorítmica & \textit{Condition} com expressões \textit{lambda} & Sim \\ \hline
@@ -1779,7 +1778,7 @@ de distribuição do PON ainda não foi contemplada na implementação atual do
 esta propriedade em futuras melhorias no \textit{framework}. O Quadro
 \ref{tab:elementares_2} resume estes resultados.
 
-\begin{table}[!htb]
+\begin{tabframed}[!htb]
 \centering
 \caption{Propriedades elementares contempladas nas materializações do PON}
 \smallskip
@@ -1804,7 +1803,7 @@ Fw. C++ Prot. & Fw. C++ 1.0 & Fw. C++ 2.0 & Fw. C++ 3.0 & \textbf{Fw. C++ 4.0} &
 \end{threeparttable}
 \caption*{Fonte: Autoria própria}
 \label{tab:elementares_2}
-\end{table}
+\end{tabframed}
 
 Pelo fato do \textit{Framework} PON C++ 4.0 se tratar de uma evolução sobre o
 \textit{Framework} PON C++ 2.0, era de se esperar que todos os conceitos de
@@ -1837,7 +1836,7 @@ visto que tal nível de abstração é difícil de ser implementado nas linguage
 programação dos \textit{frameworks}, pois exige uma etapa de compilação para
 interpretar a expressão destas \textit{Rules}.
 
-\begin{table}[!htb]
+\begin{tabframed}[!htb]
 \centering
 \caption{Conceitos do PON contemplados nas materializações do paradigma - com adição do \textit{Framework}
 PON C++ 4.0}
@@ -1872,7 +1871,7 @@ Impertinência dinâmica &&&&&&&\checkmark&&\\\hline
 \end{threeparttable}
 \caption*{Fonte: Autoria própria}
 \label{tab:conceitos2}
-\end{table}
+\end{tabframed}
 
 Os resultados obtidos por meio da utilização do \textit{Framework} PON C++ 4.0
 para o desenvolvimento de aplicações são detalhados no capítulo seguinte. Nesses

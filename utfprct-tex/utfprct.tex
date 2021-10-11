@@ -580,6 +580,7 @@
 %% Lista de tabelas
 %%
 \incluirlistadetabelas%% Comente para remover este item
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -602,9 +603,10 @@
 %%
 %\incluirlistadeacronimos{glossaries}%% Opções: "glossaries" (pacote) ou "file" (arquivo) ou "none" (desabilita)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{comment}
 \chapter*{LISTA DE ABREVIATURAS, SIGLAS E ACRÔNIMOS}
 
-\begin{table}[h!]
+\begin{tabframed}[h!]
 \begin{tabularx}{\textwidth}{l|X|X}
 Sigla   & Original                                                                  & Tradução                                           \\ \hline
 UTFPR   & Universidade Tecnológica Federal do Paraná                                &                                                    \\ \hline
@@ -635,9 +637,9 @@ BP      & \textit{Backpropagation}                                              
 MLP     & \textit{Multi Layer Perception}                                           & Percepção Multicamadas                             \\ \hline
 CBCF    & Controle Baseado em Congestionamento Facilitado                           &                                                   
 \end{tabularx}
-\end{table}
+\end{tabframed}
 \cleardoublepage
-
+%\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de símbolos
 %% 

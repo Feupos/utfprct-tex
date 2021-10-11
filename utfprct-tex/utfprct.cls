@@ -329,8 +329,8 @@
     \newcommand{\photographname}{Fotografia}
     \newcommand{\graphname}{Gráfico}
     \newcommand{\tabframedname}{Quadro}
-    \renewcommand{\listtablename}{Lista de Quadros}
-    \renewcommand{\tablename}{Quadro}
+    \renewcommand{\listtablename}{Lista de Tabelas}
+    \renewcommand{\tablename}{Tabela}
     \newcommand{\nomefonte}{Fonte}
     % \renewcommand{\nomname}{Nomenclatura}
     \newcommand{\nomelistadeacronimos}{Lista de Abreviaturas, Siglas e Acrônimos}
@@ -1811,7 +1811,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 \renewcommand{\cfttablename}{\tablename\space}%% Nome da entrada na lista de objetos flutuantes (tabela)
 \renewcommand*{\cfttableaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (tabela)
 \renewcommand{\afterlottitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (tabela)
-\setfloatadjustment{table}{\centering}%% Ajuste do objeto flutuante (tabela)
+\setfloatadjustment{tabframed}{\centering}%% Ajuste do objeto flutuante (tabela)
 \AtBeginEnvironment{tabular}{\ABNTEXfontereduzida}%% Formatação do ambiente tabular
 \AtBeginEnvironment{tabularx}{\ABNTEXfontereduzida}%% Formatação do ambiente tabularx
 \AtBeginEnvironment{longtable}{\linespread{1}\ABNTEXfontereduzida}%% Formatação do ambiente longtable
@@ -2287,7 +2287,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 
 \counterwithout{algorithm}{chapter}%% Numeração contínua ao longo dos capítulos para algoritmos
 \counterwithout{figure}{chapter}%% Numeração contínua ao longo dos capítulos para figuras
-\counterwithout{table}{chapter}%% Numeração contínua ao longo dos capítulos para tabelas
+\counterwithout{tabframed}{chapter}%% Numeração contínua ao longo dos capítulos para tabelas
 \counterwithout{equation}{chapter}%% Numeração contínua ao longo dos capítulos para equações
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
